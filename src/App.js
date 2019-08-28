@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import NavBar from "./components/common/navBar";
+import StockAnalytics from "./components/stockanalysis/stockAnalytics";
+import SectorAnalytics from "./components/sectoranalytics/sectorAnalytics";
+import FundManagerAnalytics from "./components/fundmanageranalytics/fundManagerAnalytics";
+import NotFound from "./components/notFound";
+
+import "./App.css";
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <main className="container-fluid">
+          <Switch>
+            <Route path="/stock-analytics/:id" component={StockAnalytics} />
+            <Route path="/stock-analytics" component={StockAnalytics} />
+            <Route path="/sector-analytics" component={SectorAnalytics} />
+            <Route
+              path="/fund-manager-analytics"
+              component={FundManagerAnalytics}
+            />
+            <Route path="/not-found" component={NotFound} />
+            <Redirect from="/" exact to="/stock-analytics" />
+            <Redirect to="/not-found" />
+          </Switch>
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
