@@ -26,10 +26,6 @@ class StockAnalytics extends Component {
     this.setState({ data, amcHoldingData });
   }
 
-  componentDidUpdate() {
-    console.log("Component updated");
-  }
-
   render() {
     if (
       !(this.state.data && this.state.amcHoldingData && this.state.instruments)

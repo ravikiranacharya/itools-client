@@ -5,14 +5,12 @@ import TypeAhead from "./../common/typeAhead";
 
 class SectorName extends Component {
   state = {
-    sectors: [],
     selectedSectorId: ""
   };
 
   componentDidMount() {
-    const { data } = this.props;
-    const sectors = fetchAllSectors();
-    this.setState({ sectors, data });
+    const { data, sectors } = this.props;
+    this.setState({ data, sectors });
   }
 
   handleChange = async selectedOptions => {
@@ -25,7 +23,7 @@ class SectorName extends Component {
   handleSubmit = e => {};
 
   render() {
-    if (!this.state.data) return <h6>No data found</h6>;
+    if (!(this.state.data && this.state.sectors)) return <h6>No data found</h6>;
     const { sectors, data } = this.state;
     return (
       <div className="row">
