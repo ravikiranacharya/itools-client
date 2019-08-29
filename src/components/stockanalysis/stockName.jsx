@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import TypeAhead from "./../common/typeAhead";
 import history from "../../services/modules/history";
 
-import { fetchAllStocks } from "./../../services/stockAnalytics";
-
 class StockName extends Component {
   state = {
     instruments: [],
@@ -11,10 +9,7 @@ class StockName extends Component {
   };
 
   async componentDidMount() {
-    const data = this.props.data;
-
-    const instruments = await fetchAllStocks();
-    console.log(instruments);
+    const { data, instruments } = this.props;
     this.setState({ data, instruments });
   }
 

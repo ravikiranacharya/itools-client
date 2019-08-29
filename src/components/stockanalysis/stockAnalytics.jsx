@@ -3,6 +3,7 @@ import StockName from "./stockName";
 import StockOverview from "./stockOverview";
 import {
   fetchStockOverview,
+  fetchAllStocks,
   fetchAMCWiseHoldings
 } from "./../../services/stockAnalytics";
 import MTMAllocation from "./../common/mtmAllocation";
@@ -10,11 +11,12 @@ import MTMAllocation from "./../common/mtmAllocation";
 class StockAnalytics extends Component {
   state = {};
 
-  componentDidMount() {
+  async componentDidMount() {
     const instrumentId = this.props.match.params.id || 1;
     const data = { ...fetchStockOverview(instrumentId) };
     const amcHoldingData = { ...fetchAMCWiseHoldings(instrumentId) };
-    this.setState({ data, amcHoldingData });
+    const instruments = await fetchAllStocks();
+    this.setState({ data, amcHoldingData, instruments });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,15 +31,17 @@ class StockAnalytics extends Component {
   }
 
   render() {
-    if (!(this.state.data && this.state.amcHoldingData))
-      return <h6>No data found</h6>;
+    if (
+      !(this.state.data && this.state.amcHoldingData && this.state.instruments)
+    )
+      return <div>Loading...</div>;
 
     const { instrumentData, instrumentDetails } = this.state.data;
-    const { amcHoldingData } = this.state;
+    const { amcHoldingData, instruments } = this.state;
 
     return (
       <div>
-        <StockName data={instrumentDetails} />
+        <StockName data={instrumentDetails} instruments={instruments} />
         <StockOverview data={instrumentData} />
         <div className="row p-2">
           <MTMAllocation data={amcHoldingData} />
