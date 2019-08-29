@@ -13,7 +13,8 @@ class StockAnalytics extends Component {
 
   async componentDidMount() {
     const instrumentId = this.props.match.params.id || 1;
-    const data = { ...fetchStockOverview(instrumentId) };
+    const data = await fetchStockOverview(instrumentId);
+    console.log(data);
     const amcHoldingData = { ...fetchAMCWiseHoldings(instrumentId) };
     const instruments = await fetchAllStocks();
     this.setState({ data, amcHoldingData, instruments });

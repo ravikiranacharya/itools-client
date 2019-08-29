@@ -13,33 +13,11 @@ export function filterStocks(state, value) {
   );
 }
 
-export function fetchStockOverview(instrumentId) {
-  return {
-    instrumentDetails: {
-      instrumentId: "1234",
-      instrumentName: "HDFC Bank Ltd.",
-      sector: {
-        sectorId: "123",
-        sectorName: "Financials"
-      }
-    },
-    instrumentData: {
-      schemesCount: 523,
-      aum: "74840",
-      aumDenomination: "(Cr.)",
-      topInvestor: {
-        id: "",
-        name: "SBI ETF Nifty 50",
-        investedAmount: 6116,
-        denomination: "(Cr.)"
-      },
-      maximumDependant: {
-        id: "",
-        name: "Edelweiss ETF-Nifty Bank",
-        weightage: 31.62
-      }
-    }
-  };
+export async function fetchStockOverview(instrumentId) {
+  const data = await axios.get(
+    "https://localhost:44311/api/stocks/" + "overview/" + instrumentId
+  );
+  return data.data;
 }
 
 export function fetchAMCWiseHoldings(instrumentId) {
