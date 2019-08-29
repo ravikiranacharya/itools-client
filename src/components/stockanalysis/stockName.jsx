@@ -10,10 +10,11 @@ class StockName extends Component {
     selectedInstrumentId: ""
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const data = this.props.data;
 
-    const instruments = fetchAllStocks();
+    const instruments = await fetchAllStocks();
+    console.log(instruments);
     this.setState({ data, instruments });
   }
 
@@ -27,7 +28,7 @@ class StockName extends Component {
   handleSubmit = e => {};
 
   render() {
-    if (!this.state.data) return <h6>No data found</h6>;
+    if (!this.state.data) return <div></div>;
     const { data, instruments } = this.state;
     return (
       <div className="row">
