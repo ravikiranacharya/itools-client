@@ -19,10 +19,10 @@ class StockAnalytics extends Component {
     this.setState({ data, amcHoldingData, instruments });
   }
 
-  componentWillReceiveProps(nextProps) {
+  async componentWillReceiveProps(nextProps) {
     const instrumentId = nextProps.match.params.id;
-    const data = { ...fetchStockOverview(instrumentId) };
-    const amcHoldingData = { ...fetchAMCWiseHoldings(instrumentId) };
+    const data = await fetchStockOverview(instrumentId);
+    const amcHoldingData = await fetchAMCWiseHoldings(instrumentId);
     this.setState({ data, amcHoldingData });
   }
 
