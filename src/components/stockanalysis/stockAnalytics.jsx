@@ -14,18 +14,40 @@ class StockAnalytics extends Component {
 
   async componentDidMount() {
     const instrumentId = this.props.match.params.id || 1;
-    const data = await fetchStockOverview(instrumentId);
-    const amcHoldingData = await fetchAMCWiseHoldings(instrumentId);
-    const instruments = await fetchAllStocks();
-    this.setState({ data, amcHoldingData, instruments });
+
+    try {
+      const { data, amcHoldingData, instruments } = await this.fetchData(
+        instrumentId
+      );
+
+      this.setState({
+        data,
+        amcHoldingData,
+        instruments,
+        currentInstrumentId: instrumentId
+      });
+    } catch (e) {}
   }
 
   async componentWillReceiveProps(nextProps) {
     const instrumentId = nextProps.match.params.id;
-    const data = await fetchStockOverview(instrumentId);
-    const amcHoldingData = await fetchAMCWiseHoldings(instrumentId);
-    this.setState({ data, amcHoldingData });
+
+    try {
+      const { data, amcHoldingData } = await this.fetchData(instrumentId);
+      this.setState({ data, amcHoldingData });
+    } catch (e) {}
   }
+
+  fetchData = async instrumentId => {
+    try {
+      const data = await fetchStockOverview(instrumentId);
+      const amcHoldingData = await fetchAMCWiseHoldings(instrumentId);
+      const instruments = await fetchAllStocks();
+      return { data, amcHoldingData, instruments };
+    } catch (e) {
+      return null;
+    }
+  };
 
   render() {
     if (

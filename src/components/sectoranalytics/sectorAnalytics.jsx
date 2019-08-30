@@ -18,7 +18,7 @@ class SectorAnalytics extends Component {
     const data = await fetchSectorOverview(sectorId);
     const sectors = await fetchAllSectors();
     const amcHoldingData = await fetchAMCWiseHoldings(sectorId);
-    console.log(amcHoldingData);
+
     this.setState({ data, sectors, amcHoldingData });
   }
 
