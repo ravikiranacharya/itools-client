@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import StockName from "./stockName";
 import StockOverview from "./stockOverview";
 import {
   fetchStockOverview,
@@ -60,8 +59,11 @@ class StockAnalytics extends Component {
 
     return (
       <div>
-        <StockName data={instrumentDetails} instruments={instruments} />
-        <StockOverview data={instrumentData} />
+        <StockOverview
+          data={instrumentData}
+          details={instrumentDetails}
+          instruments={instruments}
+        />
         <div className="row p-2">
           <MTMAllocation data={amcHoldingData} />
         </div>
