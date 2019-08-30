@@ -100,8 +100,11 @@ class FundManagerAnalytics extends Component {
 
     return (
       <React.Fragment>
-        <FundManagerName data={data} fundManagers={fundManagers} />
-        <FundManagerOverview data={data} />
+        <FundManagerOverview
+          data={data}
+          details={data}
+          fundManagers={fundManagers}
+        />
         <div className="row p-2">
           <div className="col-md-6 col-lg-6 col-sm-12 col-xs12">
             <FundManagerSchemes
