@@ -1,8 +1,10 @@
-import axios from "axios";
+import httpHelpers from "./utils/httpHelpers";
+import config from "../config.json";
+
+const apiEndpoint = `${config.apiUrl}/stocks`;
 
 export async function fetchAllStocks() {
-  const data = await axios.get("https://localhost:44311/api/stocks");
-  return data.data;
+  return httpHelpers.get(apiEndpoint);
 }
 
 export function filterStocks(state, value) {
@@ -14,18 +16,11 @@ export function filterStocks(state, value) {
 }
 
 export async function fetchStockOverview(instrumentId) {
-  const data = await axios.get(
-    "https://localhost:44311/api/stocks/" + "overview/" + instrumentId
-  );
-  return data.data;
+  return httpHelpers.get(`${apiEndpoint}/overview/${instrumentId}`);
 }
 
 export async function fetchAMCWiseHoldings(instrumentId) {
-  const data = await axios.get(
-    "https://localhost:44311/api/stocks/" + "amcholding/" + instrumentId
-  );
-
-  return data.data;
+  return httpHelpers.get(`${apiEndpoint}/amcholding/${instrumentId}`);
 }
 
 export default {
