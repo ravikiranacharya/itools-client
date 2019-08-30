@@ -1,22 +1,18 @@
-import axios from "axios";
+import httpHelpers from "./utils/httpHelpers";
+import config from "../config.json";
+
+const apiEndpoint = `${config.apiUrl}/sectors`;
 
 export async function fetchAllSectors() {
-  const data = await axios.get("https://localhost:44311/api/sectors");
-  return data.data;
+  return httpHelpers.get(apiEndpoint);
 }
 
 export async function fetchSectorOverview(sectorId) {
-  const data = await axios.get(
-    "https://localhost:44311/api/sectors/" + "overview/" + sectorId
-  );
-  return data.data;
+  return httpHelpers.get(`${apiEndpoint}/overview/${sectorId}`);
 }
 
 export async function fetchAMCWiseHoldings(sectorId) {
-  const data = await axios.get(
-    "https://localhost:44311/api/sectors/" + "amcholding/" + sectorId
-  );
-  return data.data;
+  return httpHelpers.get(`${apiEndpoint}/amcholding/${sectorId}`);
 }
 
 export default {
