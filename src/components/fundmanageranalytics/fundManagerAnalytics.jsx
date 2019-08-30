@@ -20,16 +20,16 @@ class FundManagerAnalytics extends Component {
 
   async componentDidMount() {
     const fundManagerId = this.props.match.params.id || 1;
-    const data = await fetchFundManagerOverview(fundManagerId);
-    const fundManagers = await fetchAllFundManagers();
-    const schemes = await fetchSchemesManaged(fundManagerId);
-    const riskReturnStatistics = await fetchRiskReturnStatistics(fundManagerId);
-    const peerSchemePerformance = await fetchPeerSchemePerformance(
-      fundManagerId
-    );
-    const fundManagerPerformanceOverTime = await fetchFundManagerPerformanceOverTime(
-      fundManagerId
-    );
+
+    const {
+      data,
+      fundManagers,
+      schemes,
+      riskReturnStatistics,
+      peerSchemePerformance,
+      fundManagerPerformanceOverTime
+    } = await this.fetchData(fundManagerId);
+
     this.setState({
       data,
       schemes,
@@ -42,15 +42,15 @@ class FundManagerAnalytics extends Component {
 
   async componentWillReceiveProps(nextProps) {
     const fundManagerId = nextProps.match.params.id || 1;
-    const data = await fetchFundManagerOverview(fundManagerId);
-    const schemes = await fetchSchemesManaged(fundManagerId);
-    const riskReturnStatistics = await fetchRiskReturnStatistics(fundManagerId);
-    const peerSchemePerformance = await fetchPeerSchemePerformance(
-      fundManagerId
-    );
-    const fundManagerPerformanceOverTime = await fetchFundManagerPerformanceOverTime(
-      fundManagerId
-    );
+
+    const {
+      data,
+      schemes,
+      riskReturnStatistics,
+      peerSchemePerformance,
+      fundManagerPerformanceOverTime
+    } = await this.fetchData(fundManagerId);
+
     this.setState({
       data,
       schemes,
@@ -59,6 +59,32 @@ class FundManagerAnalytics extends Component {
       fundManagerPerformanceOverTime
     });
   }
+
+  fetchData = async fundManagerId => {
+    try {
+      const data = await fetchFundManagerOverview(fundManagerId);
+      const fundManagers = await fetchAllFundManagers();
+      const schemes = await fetchSchemesManaged(fundManagerId);
+      const riskReturnStatistics = await fetchRiskReturnStatistics(
+        fundManagerId
+      );
+      const peerSchemePerformance = await fetchPeerSchemePerformance(
+        fundManagerId
+      );
+      const fundManagerPerformanceOverTime = await fetchFundManagerPerformanceOverTime(
+        fundManagerId
+      );
+      return {
+        data,
+        fundManagers,
+        schemes,
+        riskReturnStatistics,
+        peerSchemePerformance,
+        fundManagerPerformanceOverTime
+      };
+    } catch (e) {}
+    return null;
+  };
 
   render() {
     if (!this.state.data) return <Spinner></Spinner>;
