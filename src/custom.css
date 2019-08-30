@@ -155,3 +155,19 @@ ul.navbar-nav li.active a {
   -o-text-overflow: ellipsis; /* Opera < 11*/
   text-overflow: ellipsis; /* IE, Safari (WebKit), Opera >= 11, FF > 6 */
 }
+
+.center-vertical {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.center-horizontal {
+  margin: auto;
+  max-height: 100%;
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SectorName from "./sectorName";
 import SectorOverview from "./sectorOverview";
 import MTMAllocation from "./../common/mtmAllocation";
+import Spinner from "./../common/spinner";
 
 import {
   fetchAMCWiseHoldings,
@@ -32,7 +33,7 @@ class SectorAnalytics extends Component {
 
   render() {
     if (!(this.state.data && this.state.amcHoldingData && this.state.sectors))
-      return <div>Loading...</div>;
+      return <Spinner></Spinner>;
 
     const { amcHoldingData, sectors, data } = this.state;
     const { sectorDetails, sectorData } = data;

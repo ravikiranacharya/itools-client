@@ -6,13 +6,15 @@ class Spinner extends Component {
   state = {};
   render() {
     return (
-      <div className="d-flex justify-content-center align-items-center">
-        <Loader
-          type="CradleLoader"
-          color="#00BFFF"
-          height="100"
-          width="100"
-        ></Loader>
+      <div className="center-vertical">
+        <div className="center-horizontal">
+          <Loader
+            type="CradleLoader"
+            color="#00BFFF"
+            height="100"
+            width="100"
+          ></Loader>
+        </div>
       </div>
     );
   }
