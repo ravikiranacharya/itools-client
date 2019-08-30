@@ -4,6 +4,7 @@ import {
   fetchFundManagerOverview,
   fetchSchemesManaged,
   fetchRiskReturnStatistics,
+  fetchAllFundManagers,
   fetchPeerSchemePerformance,
   fetchFundManagerPerformanceOverTime
 } from "./../../services/fundManagerAnalytics";
@@ -12,17 +13,42 @@ import FundManagerSchemes from "./fundManagerSchemes";
 import FundManagerRiskReturnStatistics from "./fundManagerRiskReturnStatistics";
 import PeerComparision from "./peerComparision";
 import FundManagerPerformanceOverTime from "./fundManagerPerformanceOverTime";
+import Spinner from "./../common/spinner";
 
 class FundManagerAnalytics extends Component {
   state = {};
 
-  componentDidMount() {
+  async componentDidMount() {
     const fundManagerId = this.props.match.params.id || 1;
-    const data = fetchFundManagerOverview(fundManagerId);
-    const schemes = fetchSchemesManaged(fundManagerId);
-    const riskReturnStatistics = fetchRiskReturnStatistics(fundManagerId);
-    const peerSchemePerformance = fetchPeerSchemePerformance(fundManagerId);
-    const fundManagerPerformanceOverTime = fetchFundManagerPerformanceOverTime(
+    const data = await fetchFundManagerOverview(fundManagerId);
+    const fundManagers = await fetchAllFundManagers();
+    const schemes = await fetchSchemesManaged(fundManagerId);
+    const riskReturnStatistics = await fetchRiskReturnStatistics(fundManagerId);
+    const peerSchemePerformance = await fetchPeerSchemePerformance(
+      fundManagerId
+    );
+    const fundManagerPerformanceOverTime = await fetchFundManagerPerformanceOverTime(
+      fundManagerId
+    );
+    this.setState({
+      data,
+      schemes,
+      fundManagers,
+      riskReturnStatistics,
+      peerSchemePerformance,
+      fundManagerPerformanceOverTime
+    });
+  }
+
+  async componentWillReceiveProps(nextProps) {
+    const fundManagerId = nextProps.match.params.id || 1;
+    const data = await fetchFundManagerOverview(fundManagerId);
+    const schemes = await fetchSchemesManaged(fundManagerId);
+    const riskReturnStatistics = await fetchRiskReturnStatistics(fundManagerId);
+    const peerSchemePerformance = await fetchPeerSchemePerformance(
+      fundManagerId
+    );
+    const fundManagerPerformanceOverTime = await fetchFundManagerPerformanceOverTime(
       fundManagerId
     );
     this.setState({
@@ -35,11 +61,12 @@ class FundManagerAnalytics extends Component {
   }
 
   render() {
-    if (!this.state.data) return <h6>No data found</h6>;
+    if (!this.state.data) return <Spinner></Spinner>;
 
     const {
       data,
       schemes,
+      fundManagers,
       riskReturnStatistics,
       peerSchemePerformance,
       fundManagerPerformanceOverTime
@@ -47,7 +74,7 @@ class FundManagerAnalytics extends Component {
 
     return (
       <React.Fragment>
-        <FundManagerName data={data} />
+        <FundManagerName data={data} fundManagers={fundManagers} />
         <FundManagerOverview data={data} />
         <div className="row p-2">
           <div className="col-md-6 col-lg-6 col-sm-12 col-xs12">

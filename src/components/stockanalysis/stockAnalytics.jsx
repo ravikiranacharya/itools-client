@@ -7,6 +7,7 @@ import {
   fetchAMCWiseHoldings
 } from "./../../services/stockAnalytics";
 import MTMAllocation from "./../common/mtmAllocation";
+import Spinner from "./../common/spinner";
 
 class StockAnalytics extends Component {
   state = {};
@@ -30,7 +31,7 @@ class StockAnalytics extends Component {
     if (
       !(this.state.data && this.state.amcHoldingData && this.state.instruments)
     )
-      return <div>Loading...</div>;
+      return <Spinner></Spinner>;
 
     const { instrumentData, instrumentDetails } = this.state.data;
     const { amcHoldingData, instruments } = this.state;

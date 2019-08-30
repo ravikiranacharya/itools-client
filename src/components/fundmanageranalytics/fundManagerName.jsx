@@ -10,8 +10,7 @@ class FundManagerName extends Component {
   };
 
   componentDidMount() {
-    const { data } = this.props;
-    const fundManagers = fetchAllFundManagers();
+    const { data, fundManagers } = this.props;
     this.setState({ fundManagers, data });
   }
 
