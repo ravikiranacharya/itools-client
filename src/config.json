@@ -1,3 +1,15 @@
 {
-  "apiUrl": "https://localhost:44311/api"
+  "apiUrl": "https://localhost:44311/api",
+  "chartColors": {
+    "pie": [
+      "#50B432",
+      "#ED561B",
+      "#DDDF00",
+      "#24CBE5",
+      "#64E572",
+      "#FF9655",
+      "#FFF263",
+      "#6AF9C4"
+    ]
+  }
 }

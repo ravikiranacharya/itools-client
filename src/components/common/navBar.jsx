@@ -2,16 +2,35 @@ import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 class NavBar extends Component {
-  state = {};
+  state = {
+    toggled: false
+  };
+
+  toggleMenu = () => {
+    const toggled = !this.state.toggled;
+    this.setState({ toggled });
+  };
+
   render() {
+    const show = this.state.toggled ? "show" : "";
+
     return (
-      <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <Link className="navbar-brand" to="/">
-              iTools
-            </Link>
-          </div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-white mb-4 shadow static-top">
+        <div className="navbar-header">
+          <Link className="navbar-brand" to="/">
+            iTools
+          </Link>
+        </div>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          onClick={this.toggleMenu}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className={"collapse navbar-collapse " + show}>
           <ul className="navbar-nav ml-auto">
             <li>
               <NavLink
