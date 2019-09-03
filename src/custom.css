@@ -150,6 +150,7 @@ ul.navbar-nav li.active a {
   height: 480px;
 }
 
+.card h6,
 .short-string {
   white-space: nowrap;
   width: 100%; /* IE6 needs any width */

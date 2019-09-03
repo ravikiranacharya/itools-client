@@ -27,12 +27,12 @@ class SectorName extends Component {
     const { sectors, data } = this.state;
     return (
       <div className="row">
-        <div className="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+        <div className="col-md-8 col-lg-9 col-sm-12 col-xs-12">
           <h3 className="text-left ml-2 mb-0 text-dark">{data.sectorName}</h3>
           <h6>&nbsp;</h6>
         </div>
 
-        <div className="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+        <div className="col-md-4 col-lg-3 col-sm-12 col-xs-12">
           <TypeAhead
             data={sectors}
             labelKey="sectorName"

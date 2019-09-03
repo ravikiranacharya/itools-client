@@ -26,7 +26,7 @@ class FundManagerOverview extends Component {
           ></FundManagerName>
         </div>
         <div className="row p-2">
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="primary"
               icon="fa-th"
@@ -34,7 +34,7 @@ class FundManagerOverview extends Component {
               value={schemesCount}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="success"
               icon="fa-signal"
@@ -42,7 +42,7 @@ class FundManagerOverview extends Component {
               value={totalAUM.amount + totalAUM.denomination}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="info"
               icon="fa-download"
@@ -50,7 +50,7 @@ class FundManagerOverview extends Component {
               value={return1y + "%"}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="warning"
               icon="fa-road"
