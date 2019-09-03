@@ -28,9 +28,13 @@ class SchemeHolding extends Component {
 
   renderShowsTotal(start, to, total) {
     return (
-      <p className="float-left pt-2">
-        Showing <b>{start}</b>-<b>{to}</b> of <b>{total}</b> records
-      </p>
+      <div className="row">
+        <div className="col-md-12">
+          <p className="float-left pt-2 total">
+            Showing <b>{start}</b>-<b>{to}</b> of <b>{total}</b> records
+          </p>
+        </div>
+      </div>
     );
   }
 
@@ -42,7 +46,9 @@ class SchemeHolding extends Component {
       firstPage: "First", // First page button text
       lastPage: "Last", // Last page button text
       paginationShowsTotal: this.renderShowsTotal, // Accept bool or function
-      hideSizePerPage: true
+      alwaysShowAllBtns: false,
+      hideSizePerPage: true,
+      hidePageListOnlyOnePage: true
     };
     return (
       <div className="card shadow mb-4">

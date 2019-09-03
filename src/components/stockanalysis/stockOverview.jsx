@@ -31,7 +31,7 @@ class StockOverview extends Component {
           <StockName data={details} instruments={instruments} />
         </div>
         <div className="row p-2">
-          <div className="col-md-3 col-lg-3 col-sm-6 col-xs-6 pb-sm-2">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="primary"
               icon="fa-th"
@@ -44,7 +44,7 @@ class StockOverview extends Component {
               value={schemesCount}
             />
           </div>
-          <div className="col-md-3 col-lg-3 col-sm-6 col-xs-6 pb-sm-2">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="success"
               icon="fa-signal"
@@ -57,7 +57,7 @@ class StockOverview extends Component {
               value={aum + aumDenomination}
             />
           </div>
-          <div className="col-md-3 col-lg-3 col-sm-6 col-xs-6 pb-sm-2">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="info"
               icon="fa-download"
@@ -74,7 +74,7 @@ class StockOverview extends Component {
               value={topInvestor.investedAmount + topInvestor.denomination}
             />
           </div>
-          <div className="col-md-3 col-lg-3 col-sm-6 col-xs-6 pb-sm-2">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="warning"
               icon="fa-road"

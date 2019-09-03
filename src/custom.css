@@ -174,22 +174,47 @@ ul.navbar-nav li.active a {
   max-height: 100%;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+.chart-area {
+  height: auto;
+  min-height: 350px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .box .text-xs {
     font-size: 0.6rem;
+    padding-top: 6px;
+  }
+  .box .h5 {
+    font-size: 0.9rem;
+  }
+  .react-bs-table-pagination .total {
+    display: none;
+  }
+
+  .react-bs-table-container table {
+    width: 558px;
   }
 }
 
-@media screen and (min-width: 426px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 768px) {
   .box .text-xs {
     font-size: 0.6rem;
-  }
-
-  .box .icon {
-    display: none;
   }
 
   .card-body .scheme-holdings {
     height: 360px;
+  }
+
+  .chart-area {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* .box .icon {
+    display: none;
+  } */
+  .react-bs-table table {
+    width: 558px;
   }
 }
