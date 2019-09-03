@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StockName from "./stockName";
-import Box from "./box";
+import Box from "../common/box";
 import Spinner from "../common/spinner";
 
 class StockOverview extends Component {

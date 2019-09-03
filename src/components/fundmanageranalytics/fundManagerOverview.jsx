@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Box from "./../stockanalysis/box";
+import Box from "../common/box";
 import Spinner from "../common/spinner";
 import FundManagerName from "./fundManagerName";
 
