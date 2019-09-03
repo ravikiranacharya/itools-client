@@ -176,6 +176,20 @@ ul.navbar-nav li.active a {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .box .text-xs {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 767px) {
+  .box .text-xs {
+    font-size: 0.6rem;
+  }
+
+  .box .icon {
+    display: none;
+  }
+
+  .card-body .scheme-holdings {
+    height: 360px;
   }
 }

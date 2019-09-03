@@ -12,13 +12,13 @@ class Box extends Component {
       <div className={highlightClass}>
         <div className="card-body box">
           <div className="row no-gutters align-items-center">
-            <div className="col mr-2">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-8">
               <div className="h5 mb-0 font-weight-bold text-gray-800">
                 {value}
               </div>
               <div className={textClass}>{title}</div>
             </div>
-            <div className="col-auto">
+            <div className="col icon">
               <i className={iconClass} />
             </div>
           </div>

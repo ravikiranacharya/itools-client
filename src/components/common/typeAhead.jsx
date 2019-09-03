@@ -11,7 +11,7 @@ class TypeAhead extends Component {
         {...this.state}
         onChange={selected => this.setState({ selected })}
         options={this.props.data}
-        className="pr-2"
+        className="p-2"
         {...this.props}
       />
       // <div className="input-group mt-2 pr-2 search-box">
