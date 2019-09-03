@@ -32,7 +32,7 @@ class SectorOverview extends Component {
           <SectorName data={details} sectors={sectors} />
         </div>
         <div className="row p-2">
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="primary"
               icon="fa-th"
@@ -45,7 +45,7 @@ class SectorOverview extends Component {
               value={schemesCount}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="success"
               icon="fa-signal"
@@ -58,7 +58,7 @@ class SectorOverview extends Component {
               value={aum + aumDenomination}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="info"
               icon="fa-download"
@@ -75,7 +75,7 @@ class SectorOverview extends Component {
               value={topInvestor.investedAmount + topInvestor.denomination}
             />
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="warning"
               icon="fa-road"
