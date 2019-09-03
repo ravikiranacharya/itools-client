@@ -10,7 +10,7 @@ class Box extends Component {
 
     return (
       <div className={highlightClass}>
-        <div className="card-body">
+        <div className="card-body box">
           <div className="row no-gutters align-items-center">
             <div className="col mr-2">
               <div className="h5 mb-0 font-weight-bold text-gray-800">
