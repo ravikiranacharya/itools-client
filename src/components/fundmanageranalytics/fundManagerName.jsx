@@ -42,7 +42,7 @@ class FundManagerName extends Component {
             onChange={this.handleChange}
             onSubmit={this.handleSubmit}
             placeholder="Search fund manager..."
-            id="search-sector"
+            id="search-fund-manager"
           />
         </div>
       </div>
