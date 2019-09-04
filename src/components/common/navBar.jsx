@@ -37,6 +37,7 @@ class NavBar extends Component {
                 activeClassName="active"
                 className="nav-item nav-link"
                 to="/stock-analytics"
+                onClick={this.toggleMenu}
               >
                 Stock Analytics
               </NavLink>
@@ -46,6 +47,7 @@ class NavBar extends Component {
                 activeClassName="active"
                 className="nav-item nav-link"
                 to="/sector-analytics"
+                onClick={this.toggleMenu}
               >
                 Sector Analytics
               </NavLink>
@@ -55,6 +57,7 @@ class NavBar extends Component {
                 activeClassName="active"
                 className="nav-item nav-link"
                 to="/fund-manager-analytics"
+                onClick={this.toggleMenu}
               >
                 Fund Manager Analytics
               </NavLink>
@@ -64,6 +67,7 @@ class NavBar extends Component {
                 activeClassName="active"
                 className="nav-item nav-link"
                 to="/fund-picker"
+                onClick={this.toggleMenu}
               >
                 Fund Picker
               </NavLink>
