@@ -5,6 +5,8 @@ import NavBar from "./components/common/navBar";
 import StockAnalytics from "./components/stockanalysis/stockAnalytics";
 import SectorAnalytics from "./components/sectoranalytics/sectorAnalytics";
 import FundManagerAnalytics from "./components/fundmanageranalytics/fundManagerAnalytics";
+import ReturnAnalytics from "./components/returnanalysis/returnAnalytics";
+
 import NotFound from "./components/notFound";
 
 import "./App.css";
@@ -23,6 +25,7 @@ class App extends Component {
               path="/fund-manager-analytics"
               component={FundManagerAnalytics}
             />
+            <Route path="/return-analytics" component={ReturnAnalytics} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/stock-analytics" />
             <Redirect to="/not-found" />
