@@ -3,34 +3,14 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 class AMCHolding extends Component {
-  state = {};
-
-  componentDidMount() {
-    const data = [...this.props.data];
-    const mappedData = this.mapDataToModel(data);
-    this.setState({ data: mappedData });
-  }
-
-  mapDataToModel(data) {
-    const mappedData = data.map(item => {
-      return {
-        name: item.amcName,
-        y: parseFloat(item.weightage),
-        amcId: item.amcId
-      };
-    });
-    return mappedData;
-  }
-
-  render() {
-    const options = {
+  state = {
+    options: {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
         type: "pie",
-        height: 320,
-        width: 520
+        height: 320
       },
       tooltip: {
         formatter: function() {
@@ -81,10 +61,34 @@ class AMCHolding extends Component {
       series: [
         {
           type: "pie",
-          data: this.state.data
+          data: []
         }
       ]
-    };
+    }
+  };
+
+  componentDidMount() {
+    const data = [...this.props.data];
+    const mappedData = this.mapDataToModel(data);
+    const { options } = this.state;
+    options.series[0].data = mappedData;
+    this.setState({ options });
+  }
+
+  mapDataToModel(data) {
+    const mappedData = data.map(item => {
+      return {
+        name: item.amcName,
+        y: parseFloat(item.weightage),
+        amcId: item.amcId
+      };
+    });
+    return mappedData;
+  }
+
+  render() {
+    const { options } = this.state;
+    if (!options.series[0].data.length) return <h6>No data found</h6>;
 
     return (
       <div className="card shadow mb-4">
