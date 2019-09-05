@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import SearchBar from "./searchBar";
-import { fetchAllInstruments } from "../../services/returnAnalytics";
+import {
+  fetchAllInstruments,
+  fetchInstrumentReturns
+} from "../../services/returnAnalytics";
 import Spinner from "../common/spinner";
 import FlashCard from "./flashCard";
 
@@ -14,15 +17,14 @@ class ReturnAnalytics extends Component {
     this.setState({ instruments });
   }
 
-  handleAdd = () => {
-    const { selectedInstrumentId } = this.state;
-    console.log(selectedInstrumentId);
-    // const { selectedInstruments } = this.state;
-    // selectedInstruments.push({
-    //   instrumentId: 1,
-    //   instrumentName: "HDFC Hybrid Debt - G"
-    // });
-    // this.setState({ selectedInstruments });
+  handleAdd = async () => {
+    const { selectedInstrumentId, selectedInstruments } = this.state;
+
+    const instrumentReturns = await fetchInstrumentReturns(
+      selectedInstrumentId
+    );
+    selectedInstruments.push(instrumentReturns);
+    this.setState({ selectedInstruments });
   };
 
   handleChange = async selectedOptions => {
@@ -62,10 +64,13 @@ class ReturnAnalytics extends Component {
           {this.state.selectedInstruments.map(instrument => {
             return (
               <div
-                key={instrument.instrumentId}
+                key={instrument.instrumentDetails.instrumentId}
                 className="col-md-3 col-lg-3 col-sm-6 col-12 p-2"
               >
-                <FlashCard key={instrument.instrumentId}></FlashCard>
+                <FlashCard
+                  key={instrument.instrumentDetails.instrumentId}
+                  data={instrument.instrumentDetails}
+                ></FlashCard>
               </div>
             );
           })}

@@ -9,6 +9,8 @@ class FlashCard extends Component {
   }
 
   render() {
+    if (!this.state.data) return <h6>No data found</h6>;
+    const { data } = this.state;
     return (
       <div className="card shadow flash-card animated--fade-in">
         <div className="card-header shadow text-left">
@@ -21,7 +23,7 @@ class FlashCard extends Component {
           </button>
           <div className="row">
             <div className="col-md-8 col-lg-8 col-sm-8 col-8">
-              <div>HDFC Hybrid Debt - G</div>
+              <div>{data.instrumentName}</div>
             </div>
           </div>
         </div>
@@ -30,7 +32,7 @@ class FlashCard extends Component {
             <div className="col-md-8 col-lg-8 col-sm-8 col-8">
               <div className="scheme-returns text-left">
                 <div className="small scheme-category">
-                  Category: <strong>Hybrid</strong>
+                  Category: <strong>{data.categoryName}</strong>
                 </div>
                 <p className="small returns-date">
                   21st Jan-2018 to 21st Jan-2019
@@ -38,7 +40,7 @@ class FlashCard extends Component {
               </div>
             </div>
             <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-              <h6 className="font-weight-bold">-6.35%</h6>
+              <h6 className="font-weight-bold">{data.return}%</h6>
             </div>
           </div>
         </div>
