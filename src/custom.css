@@ -182,6 +182,10 @@ ul.navbar-nav li.active a {
   max-height: 100%;
 }
 
+.add-schemes-btn {
+  margin-left: -2rem;
+}
+
 .chart-area {
   height: auto;
   min-height: 350px;
