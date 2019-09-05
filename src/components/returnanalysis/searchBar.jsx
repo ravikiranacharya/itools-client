@@ -15,11 +15,11 @@ class SearchBar extends Component {
     return (
       <TypeAhead
         data={data}
-        labelKey="schemeName"
+        labelKey="instrumentName"
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
         placeholder="Search scheme..."
-        id="search-scheme"
+        id="search-instrument"
       ></TypeAhead>
     );
   }

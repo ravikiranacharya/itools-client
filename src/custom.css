@@ -214,6 +214,18 @@ ul.navbar-nav li.active a {
   font-size: 0.6rem;
   font-weight: 400;
 }
+
+.flash-card .close {
+  background-color: #a70e0e;
+  width: 2rem !important;
+  height: 2rem !important;
+  position: relative;
+  margin-top: -0.7rem;
+  margin-right: -1.2rem;
+  color: #fff;
+  border: 2px solid #b1afaf;
+}
+
 .chart-area {
   height: auto;
   min-height: 350px;
@@ -251,9 +263,6 @@ ul.navbar-nav li.active a {
 }
 
 @media (max-width: 576px) {
-  /* .box .icon {
-    display: none;
-  } */
   .react-bs-table table {
     width: 558px;
   }

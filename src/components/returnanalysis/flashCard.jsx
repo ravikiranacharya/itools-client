@@ -2,10 +2,23 @@ import React, { Component } from "react";
 
 class FlashCard extends Component {
   state = {};
+
+  componentDidMount() {
+    const { data } = this.props;
+    this.setState({ data });
+  }
+
   render() {
     return (
       <div className="card shadow flash-card animated--fade-in">
         <div className="card-header shadow text-left">
+          <button
+            type="button"
+            class="close btn btn-dark btn-circle"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">-</span>
+          </button>
           <div className="row">
             <div className="col-md-8 col-lg-8 col-sm-8 col-8">
               <div>HDFC Hybrid Debt - G</div>
