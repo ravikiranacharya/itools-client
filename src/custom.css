@@ -186,6 +186,34 @@ ul.navbar-nav li.active a {
   margin-left: -2rem;
 }
 
+.flash-card.card {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: none;
+  border-top: 0.5rem solid #539e9e;
+}
+
+.flash-card .card-header {
+  border-bottom: none;
+  color: #363636;
+  font-size: 0.65rem;
+  font-weight: 600;
+  height: 4rem;
+}
+
+.flash-card .card-body {
+  padding-bottom: 0px;
+}
+
+.flash-card .returns-date {
+  font-size: 0.5rem;
+}
+
+.flash-card .scheme-category {
+  font-size: 0.6rem;
+  font-weight: 400;
+}
 .chart-area {
   height: auto;
   min-height: 350px;
