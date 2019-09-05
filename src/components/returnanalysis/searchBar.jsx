@@ -11,13 +11,17 @@ class SearchBar extends Component {
 
   render() {
     if (!this.state.data) return <h6>No data found</h6>;
+
     const { data } = this.state;
+    const { onChange } = this.props;
+
     return (
       <TypeAhead
         data={data}
         labelKey="instrumentName"
-        onChange={this.handleChange}
+        onChange={onChange}
         onSubmit={this.handleSubmit}
+        selected={this.state.selected}
         placeholder="Search scheme..."
         id="search-instrument"
       ></TypeAhead>

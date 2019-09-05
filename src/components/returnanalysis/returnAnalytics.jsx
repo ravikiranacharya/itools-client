@@ -15,13 +15,21 @@ class ReturnAnalytics extends Component {
   }
 
   handleAdd = () => {
-    const { selectedInstruments } = this.state;
-    selectedInstruments.push(1);
-    this.setState({ selectedInstruments });
+    const { selectedInstrumentId } = this.state;
+    console.log(selectedInstrumentId);
+    // const { selectedInstruments } = this.state;
+    // selectedInstruments.push({
+    //   instrumentId: 1,
+    //   instrumentName: "HDFC Hybrid Debt - G"
+    // });
+    // this.setState({ selectedInstruments });
   };
 
-  handleChange = selected => {
-    console.log(selected);
+  handleChange = async selectedOptions => {
+    if (selectedOptions.length > 0) {
+      const selectedInstrumentId = selectedOptions[0]["instrumentId"];
+      this.setState({ selectedInstrumentId, selected: selectedOptions });
+    }
   };
 
   render() {
@@ -34,7 +42,10 @@ class ReturnAnalytics extends Component {
           <div className="col-md-4 col-lg-4 col-sm-8 col-8">
             <div className="row">
               <div className="col-md-10 col-lg-10 col-sm-10 col-10 pr-0">
-                <SearchBar data={instruments}></SearchBar>
+                <SearchBar
+                  data={instruments}
+                  onChange={this.handleChange}
+                ></SearchBar>
               </div>
               <div className="col-md-2 col-lg-2 col-sm-2 col-2 p-2">
                 <button
@@ -50,8 +61,11 @@ class ReturnAnalytics extends Component {
         <div className="row p-2">
           {this.state.selectedInstruments.map(instrument => {
             return (
-              <div className="col-md-3 col-lg-3 col-sm-6 col-12 p-2">
-                <FlashCard></FlashCard>
+              <div
+                key={instrument.instrumentId}
+                className="col-md-3 col-lg-3 col-sm-6 col-12 p-2"
+              >
+                <FlashCard key={instrument.instrumentId}></FlashCard>
               </div>
             );
           })}

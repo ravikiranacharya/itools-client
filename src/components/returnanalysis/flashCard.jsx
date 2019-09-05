@@ -14,7 +14,7 @@ class FlashCard extends Component {
         <div className="card-header shadow text-left">
           <button
             type="button"
-            class="close btn btn-dark btn-circle"
+            className="close btn btn-dark btn-circle"
             aria-label="Close"
           >
             <span aria-hidden="true">-</span>
