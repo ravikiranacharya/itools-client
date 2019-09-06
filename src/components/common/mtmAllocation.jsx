@@ -7,7 +7,7 @@ class MTMAllocation extends Component {
     originalSchemes: []
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { data: amcHoldingData } = this.props;
     this.setState({ amcHoldingData, originalSchemes: amcHoldingData.Schemes });
   }
