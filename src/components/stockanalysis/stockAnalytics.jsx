@@ -11,7 +11,7 @@ import Spinner from "./../common/spinner";
 class StockAnalytics extends Component {
   state = {};
 
-  async componentDidMount() {
+  async componentWillMount() {
     const instrumentId = this.props.match.params.id || 1;
 
     try {

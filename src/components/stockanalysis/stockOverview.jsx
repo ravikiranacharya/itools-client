@@ -7,7 +7,7 @@ import Spinner from "../common/spinner";
 class StockOverview extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const { data, instruments, details } = this.props;
     this.setState({ data, instruments, details });
   }

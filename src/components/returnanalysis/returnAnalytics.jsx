@@ -32,7 +32,7 @@ class ReturnAnalytics extends Component {
       selectedInstrumentId
     );
     selectedInstruments.push(instrumentReturns);
-    this.setState({ selectedInstruments });
+    this.setState({ selectedInstruments, selected: null });
   };
 
   handleRemove = e => {
@@ -75,6 +75,7 @@ class ReturnAnalytics extends Component {
                 <SearchBar
                   data={instruments}
                   onChange={this.handleChange}
+                  selected={this.state.selected}
                 ></SearchBar>
               </div>
               <div className="col-md-2 col-lg-2 col-sm-2 col-2 p-2">

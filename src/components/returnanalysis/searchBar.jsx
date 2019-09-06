@@ -9,6 +9,11 @@ class SearchBar extends Component {
     this.setState({ data });
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { selected } = nextProps;
+    this.setState({ selected });
+  }
+
   render() {
     if (!this.state.data) return <h6>No data found</h6>;
 

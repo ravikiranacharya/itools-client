@@ -8,7 +8,7 @@ class StockName extends Component {
     selectedInstrumentId: ""
   };
 
-  async componentDidMount() {
+  async componentWillMount() {
     const { data, instruments } = this.props;
     this.setState({ data, instruments });
   }
