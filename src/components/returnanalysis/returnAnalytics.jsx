@@ -35,6 +35,17 @@ class ReturnAnalytics extends Component {
     this.setState({ selectedInstruments });
   };
 
+  handleRemove = e => {
+    const instrumentId = e.currentTarget.value;
+    let { selectedInstruments } = this.state;
+
+    selectedInstruments = selectedInstruments.filter(item => {
+      return item.instrumentDetails.instrumentId.toString() !== instrumentId;
+    });
+
+    this.setState({ selectedInstruments });
+  };
+
   isInstrumentExists = (items, itemId) => {
     const exists = items.some(item => {
       return item.instrumentDetails.instrumentId === itemId;
@@ -87,6 +98,7 @@ class ReturnAnalytics extends Component {
                 <FlashCard
                   key={instrument.instrumentDetails.instrumentId}
                   data={instrument.instrumentDetails}
+                  onClose={this.handleRemove}
                 ></FlashCard>
               </div>
             );

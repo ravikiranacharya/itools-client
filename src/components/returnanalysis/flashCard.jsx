@@ -18,6 +18,8 @@ class FlashCard extends Component {
             type="button"
             className="close btn btn-dark btn-circle"
             aria-label="Close"
+            value={data.instrumentId}
+            onClick={this.props.onClose}
           >
             <span aria-hidden="true">-</span>
           </button>
