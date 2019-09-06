@@ -54,8 +54,8 @@ class StockAnalytics extends Component {
     )
       return <Spinner></Spinner>;
 
-    const { instrumentData, instrumentDetails } = this.state.data;
-    const { amcHoldingData, instruments } = this.state;
+    const { amcHoldingData, instruments, data } = this.state;
+    const { instrumentData, instrumentDetails } = data;
 
     return (
       <div>
