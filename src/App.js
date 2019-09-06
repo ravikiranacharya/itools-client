@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
+import { ToastContainer, Toast } from "react-toastify";
+
 import NavBar from "./components/common/navBar";
 import StockAnalytics from "./components/stockanalysis/stockAnalytics";
 import SectorAnalytics from "./components/sectoranalytics/sectorAnalytics";
@@ -10,6 +12,7 @@ import ReturnAnalytics from "./components/returnanalysis/returnAnalytics";
 import NotFound from "./components/notFound";
 
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 class App extends Component {
   render() {

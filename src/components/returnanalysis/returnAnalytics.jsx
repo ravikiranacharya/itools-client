@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { ToastContainer, toast } from "react-toastify";
+
 import SearchBar from "./searchBar";
 import {
   fetchAllInstruments,
@@ -6,6 +8,8 @@ import {
 } from "../../services/returnAnalytics";
 import Spinner from "../common/spinner";
 import FlashCard from "./flashCard";
+
+import "react-toastify/dist/ReactToastify.css";
 
 class ReturnAnalytics extends Component {
   state = {
@@ -20,6 +24,10 @@ class ReturnAnalytics extends Component {
   handleAdd = async () => {
     const { selectedInstrumentId, selectedInstruments } = this.state;
 
+    if (this.isInstrumentExists(selectedInstruments, selectedInstrumentId)) {
+      toast("Instrument already selected.");
+      return;
+    }
     const instrumentReturns = await fetchInstrumentReturns(
       selectedInstrumentId
     );
@@ -49,6 +57,7 @@ class ReturnAnalytics extends Component {
     return (
       <div>
         <div className="row">
+          <ToastContainer></ToastContainer>
           <div className="col-md-4 col-lg-4 col-sm-8 col-8">
             <div className="row">
               <div className="col-md-10 col-lg-10 col-sm-10 col-10 pr-0">
