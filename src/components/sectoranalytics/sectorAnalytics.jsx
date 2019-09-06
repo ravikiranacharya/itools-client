@@ -12,7 +12,7 @@ import {
 class SectorAnalytics extends Component {
   state = {};
 
-  async componentDidMount() {
+  async componentWillMount() {
     const sectorId = this.props.match.params.id || 1;
 
     const { data, sectors, amcHoldingData } = await this.fetchData(sectorId);

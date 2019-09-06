@@ -7,7 +7,7 @@ import Spinner from "../common/spinner";
 class SectorOverview extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const { data, details, sectors } = this.props;
     this.setState({ data, details, sectors });
   }

@@ -8,7 +8,7 @@ class SectorName extends Component {
     selectedSectorId: ""
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { data, sectors } = this.props;
     this.setState({ data, sectors });
   }
