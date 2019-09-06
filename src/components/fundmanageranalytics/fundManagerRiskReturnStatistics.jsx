@@ -8,7 +8,7 @@ HighchartsMore(Highcharts);
 class FundManagerRiskReturnStatistics extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const data = this.props.data;
     this.setState({ data });
   }

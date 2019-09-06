@@ -69,7 +69,7 @@ class ScatterChart extends Component {
     }
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const data = this.props.data;
     const formattedData = this.formatDataToSeries(data);
     const options = { ...this.state.options };

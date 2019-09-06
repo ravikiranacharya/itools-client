@@ -4,7 +4,7 @@ import ScatterChart from "./scatterChart";
 class PeerComparision extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const { data } = this.props;
     this.setState({ data });
   }

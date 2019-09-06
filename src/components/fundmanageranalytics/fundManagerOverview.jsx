@@ -6,7 +6,7 @@ import FundManagerName from "./fundManagerName";
 class FundManagerOverview extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const { data, fundManagers } = this.props;
     this.setState({ data, fundManagers });
   }

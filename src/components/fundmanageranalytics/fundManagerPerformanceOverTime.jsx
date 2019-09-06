@@ -5,7 +5,7 @@ import HighchartsReact from "highcharts-react-official";
 class FundManagerPerformanceOverTime extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const { data } = this.props;
     this.setState({ data });
   }

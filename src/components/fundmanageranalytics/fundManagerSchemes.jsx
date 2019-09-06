@@ -5,7 +5,7 @@ import ReactTooltip from "react-tooltip";
 class FundManagerSchemes extends Component {
   state = {};
 
-  componentDidMount() {
+  componentWillMount() {
     const { data } = this.props;
     this.setState({ data });
   }

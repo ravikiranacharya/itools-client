@@ -9,7 +9,7 @@ class FundManagerName extends Component {
     selectedFundManagerId: ""
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const { data, fundManagers } = this.props;
     this.setState({ fundManagers, data });
   }

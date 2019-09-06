@@ -17,7 +17,7 @@ import Spinner from "./../common/spinner";
 class FundManagerAnalytics extends Component {
   state = {};
 
-  async componentDidMount() {
+  async componentWillMount() {
     const fundManagerId = this.props.match.params.id || 1;
 
     const {
