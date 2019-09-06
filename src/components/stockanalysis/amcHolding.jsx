@@ -67,7 +67,7 @@ class AMCHolding extends Component {
     }
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const data = [...this.props.data];
     const mappedData = this.mapDataToModel(data);
     const { options } = this.state;

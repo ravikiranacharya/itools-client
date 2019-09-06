@@ -9,7 +9,7 @@ class SearchBox extends Component {
     label: ""
   };
 
-  componentDidMount() {
+  componentWillMount() {
     const data = this.props.data;
     this.setState({ data });
   }
