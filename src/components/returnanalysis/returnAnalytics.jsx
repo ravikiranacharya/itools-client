@@ -27,6 +27,14 @@ class ReturnAnalytics extends Component {
     this.setState({ selectedInstruments });
   };
 
+  isInstrumentExists = (items, itemId) => {
+    const exists = items.some(item => {
+      return item.instrumentDetails.instrumentId === itemId;
+    });
+
+    return exists;
+  };
+
   handleChange = async selectedOptions => {
     if (selectedOptions.length > 0) {
       const selectedInstrumentId = selectedOptions[0]["instrumentId"];

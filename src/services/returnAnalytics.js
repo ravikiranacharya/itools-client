@@ -28,7 +28,9 @@ function allInstrumentReturns() {
         instrumentName: "HDFC Hybrid Debt - G",
         categoryId: 1,
         categoryName: "Cons. Hybrid",
-        return: 6.35
+        return: 6.35,
+        fromDate: "21-Jan-2018",
+        toDate: "21-Jan-2019"
       },
       instrumentReturns: []
     },
@@ -38,7 +40,9 @@ function allInstrumentReturns() {
         instrumentName: "HDFC  Inc -D Reinvest",
         categoryId: 2,
         categoryName: "Small Cap",
-        return: -4.5
+        return: -4.5,
+        fromDate: "21-Jan-2018",
+        toDate: "21-Jan-2019"
       },
       instrumentReturns: []
     },

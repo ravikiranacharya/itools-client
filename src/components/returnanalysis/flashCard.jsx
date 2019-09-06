@@ -35,7 +35,7 @@ class FlashCard extends Component {
                   Category: <strong>{data.categoryName}</strong>
                 </div>
                 <p className="small returns-date">
-                  21st Jan-2018 to 21st Jan-2019
+                  {data.fromDate || "-"} to {data.toDate || "-"}
                 </p>
               </div>
             </div>
