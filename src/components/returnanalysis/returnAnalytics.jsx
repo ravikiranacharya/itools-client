@@ -32,7 +32,7 @@ class ReturnAnalytics extends Component {
       selectedInstrumentId
     );
     selectedInstruments.push(instrumentReturns);
-    this.setState({ selectedInstruments, selected: null });
+    this.setState({ selectedInstruments, selected: undefined });
   };
 
   handleRemove = e => {
