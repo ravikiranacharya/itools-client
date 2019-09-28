@@ -10,6 +10,7 @@ import Spinner from "../common/spinner";
 import FlashCard from "./flashCard";
 
 import "react-toastify/dist/ReactToastify.css";
+import ReturnComparision from "./returnComparision";
 
 class ReturnAnalytics extends Component {
   state = {
@@ -105,6 +106,7 @@ class ReturnAnalytics extends Component {
             );
           })}
         </div>
+        <ReturnComparision></ReturnComparision>
       </div>
     );
   }

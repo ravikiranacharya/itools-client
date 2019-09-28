@@ -131,7 +131,7 @@ class ScatterChart extends Component {
             : (element.schemeAUM / maxAUM) * maxRadius * 100, // Radius
           fillColor: isManaged
             ? element.color
-            : this.getGradientColor(element.color)
+            : { ...this.getGradientColor(element.color) }
         },
         schemeId: element.schemeId,
         schemeName: element.schemeName
