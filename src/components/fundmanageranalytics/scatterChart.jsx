@@ -65,6 +65,14 @@ class ScatterChart extends Component {
           tooltip: {}
         }
       },
+      colors: [
+        "#8085e9",
+        "#f15c80",
+        "#f45b5b",
+        "#000000",
+        "#FFFFFF",
+        "#e4d354"
+      ],
       series: []
     }
   };
@@ -93,20 +101,38 @@ class ScatterChart extends Component {
     return series;
   };
 
+  getGradientColor = color => {
+    return {
+      radialGradient: { cx: 0.4, cy: 0.3, r: 0.7 },
+      stops: [
+        [0, "rgba(255,255,255,0.5)"],
+        [
+          1,
+          Highcharts.Color(color || Highcharts.getOptions().colors[0])
+            .setOpacity(0.5)
+            .get("rgba")
+        ]
+      ]
+    };
+  };
+
   formatSchemesToData = (schemes, maxAUM, maxRadius, isManaged = false) => {
     const series = schemes.map(element => {
       return {
         x: element.risk, // Risk involved
         y: element.return, // Return of scheme
-        marker: {
-          lineWidth: isManaged ? 1 : 0,
-          lineColor: isManaged ? "#EFEFEF" : null,
-          radius: isManaged
-            ? maxRadius
-            : (element.schemeAUM / maxAUM) * maxRadius * 100 // Radius
-        },
         name: element.schemeName,
         color: element.color,
+        marker: {
+          lineWidth: isManaged ? 1 : 0,
+          lineColor: isManaged ? "#ABABAB" : null,
+          radius: isManaged
+            ? maxRadius
+            : (element.schemeAUM / maxAUM) * maxRadius * 100, // Radius
+          fillColor: isManaged
+            ? element.color
+            : this.getGradientColor(element.color)
+        },
         schemeId: element.schemeId,
         schemeName: element.schemeName
       };
