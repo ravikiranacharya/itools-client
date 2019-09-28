@@ -48,13 +48,13 @@ class FundManagerPerformanceOverTime extends Component {
           }
         }
       },
-      //   colors: ["#6CF", "#39F", "#06C", "#036", "#000"],
       series: [
         {
           data: data.map(e => {
             return {
               x: Date.parse(e.date),
-              y: e.return
+              y: e.return,
+              color: e.color
             };
           })
         }
