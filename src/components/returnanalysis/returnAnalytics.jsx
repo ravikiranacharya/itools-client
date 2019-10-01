@@ -14,6 +14,7 @@ import ReturnComparision from "./returnComparision";
 
 class ReturnAnalytics extends Component {
   state = {
+    instruments: [],
     selectedInstruments: []
   };
 
@@ -25,6 +26,11 @@ class ReturnAnalytics extends Component {
   handleAdd = async () => {
     const { selectedInstrumentId, selectedInstruments } = this.state;
 
+    if (!selectedInstrumentId) {
+      toast("Select an instrument");
+      return;
+    }
+
     if (this.isInstrumentExists(selectedInstruments, selectedInstrumentId)) {
       toast("Instrument already selected.");
       return;
@@ -35,7 +41,7 @@ class ReturnAnalytics extends Component {
     );
     selectedInstruments.push(instrumentReturns);
 
-    this.setState({ selectedInstruments, selected: undefined });
+    this.setState({ selectedInstruments });
   };
 
   fetchInstrumentReturns = async id => {
@@ -59,7 +65,6 @@ class ReturnAnalytics extends Component {
     const exists = items.some(item => {
       return item.instrumentDetails.instrumentId === itemId;
     });
-
     return exists;
   };
 
@@ -113,7 +118,7 @@ class ReturnAnalytics extends Component {
             );
           })}
         </div>
-        {/* <ReturnComparision data={selectedInstruments}></ReturnComparision> */}
+        <ReturnComparision data={selectedInstruments}></ReturnComparision>
       </div>
     );
   }

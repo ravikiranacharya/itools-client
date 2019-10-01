@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import TypeAhead from "../common/typeAhead";
 
 class SearchBar extends Component {
-  state = {};
+  state = {
+    selected: []
+  };
 
   componentWillMount() {
     const { data } = this.props;
@@ -17,8 +19,7 @@ class SearchBar extends Component {
   render() {
     if (!this.state.data) return <h6>No data found</h6>;
 
-    const { data } = this.state;
-
+    const { data, selected } = this.state;
     return (
       <TypeAhead
         data={data}
