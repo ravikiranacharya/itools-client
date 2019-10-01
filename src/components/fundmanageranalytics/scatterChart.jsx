@@ -23,13 +23,23 @@ class ScatterChart extends Component {
         gridLineWidth: 0,
         startOnTick: true,
         endOnTick: true,
-        showLastLabel: true
+        showLastLabel: true,
+        labels: {
+          formatter: function() {
+            return this.value + "%";
+          }
+        }
       },
       yAxis: {
         title: {
           text: "Return"
         },
-        gridLineWidth: 0
+        gridLineWidth: 0,
+        labels: {
+          formatter: function() {
+            return this.value + "%";
+          }
+        }
       },
       legend: {
         layout: "horizontal",

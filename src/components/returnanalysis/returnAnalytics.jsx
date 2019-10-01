@@ -29,11 +29,19 @@ class ReturnAnalytics extends Component {
       toast("Instrument already selected.");
       return;
     }
+
     const instrumentReturns = await fetchInstrumentReturns(
       selectedInstrumentId
     );
     selectedInstruments.push(instrumentReturns);
+
     this.setState({ selectedInstruments, selected: undefined });
+  };
+
+  fetchInstrumentReturns = async id => {
+    // const instrumentReturns = await fetchInstrumentReturns(id);
+    const instrumentReturns = await fetchInstrumentReturns(474);
+    return instrumentReturns;
   };
 
   handleRemove = e => {
@@ -64,8 +72,7 @@ class ReturnAnalytics extends Component {
 
   render() {
     if (!this.state.instruments) return <Spinner></Spinner>;
-
-    const { instruments } = this.state;
+    const { instruments, selectedInstruments } = this.state;
     return (
       <div>
         <div className="row">
@@ -91,7 +98,7 @@ class ReturnAnalytics extends Component {
           </div>
         </div>
         <div className="row p-2">
-          {this.state.selectedInstruments.map(instrument => {
+          {selectedInstruments.map(instrument => {
             return (
               <div
                 key={instrument.instrumentDetails.instrumentId}
@@ -106,7 +113,7 @@ class ReturnAnalytics extends Component {
             );
           })}
         </div>
-        <ReturnComparision></ReturnComparision>
+        {/* <ReturnComparision data={selectedInstruments}></ReturnComparision> */}
       </div>
     );
   }
