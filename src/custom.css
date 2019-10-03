@@ -183,7 +183,7 @@ ul.navbar-nav li.active a {
 }
 
 .add-schemes-btn {
-  margin-left: -2rem;
+  margin-left: -1rem;
 }
 
 .flash-card.card {
@@ -265,5 +265,8 @@ ul.navbar-nav li.active a {
 @media (max-width: 576px) {
   .react-bs-table table {
     width: 558px;
+  }
+  .amc-holding-chart {
+    min-width: 100px !important;
   }
 }
