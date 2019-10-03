@@ -19,11 +19,11 @@ class ReturnAnalytics extends Component {
     instruments: [],
     selectedInstruments: [],
     colors: [
-      "#2f7ed8",
-      "#0d233a",
       "#8bbc21",
       "#910000",
       "#1aadce",
+      "#2f7ed8",
+      "#0d233a",
       "#492970",
       "#f28f43",
       "#77a1e5",

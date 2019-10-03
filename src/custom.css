@@ -191,7 +191,7 @@ ul.navbar-nav li.active a {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border: none;
-  border-top: 0.5rem solid #539e9e;
+  /* border-top: 0.5rem solid #539e9e; */
 }
 
 .flash-card .card-header {

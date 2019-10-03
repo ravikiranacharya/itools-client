@@ -4,19 +4,22 @@ class FlashCard extends Component {
   state = {};
 
   componentDidMount() {
-    const { data } = this.props;
-    this.setState({ data });
+    const { data, color } = this.props;
+    this.setState({ data, color });
   }
 
   render() {
     if (!this.state.data) return <h6>No data found</h6>;
-    const { data } = this.state;
+    const { data, color } = this.state;
+
+    const topBorderStyle = {
+      borderTop: `0.5rem solid ${color}`
+    };
+
     return (
       <div
         className="card shadow flash-card animated--fade-in"
-        style={{
-          borderTop: `0.5rem solid ${data.color}`
-        }}
+        style={topBorderStyle}
       >
         <div className="card-header shadow text-left">
           <button
