@@ -12,7 +12,12 @@ class FlashCard extends Component {
     if (!this.state.data) return <h6>No data found</h6>;
     const { data } = this.state;
     return (
-      <div className="card shadow flash-card animated--fade-in">
+      <div
+        className="card shadow flash-card animated--fade-in"
+        style={{
+          borderTop: `0.5rem solid ${data.color}`
+        }}
+      >
         <div className="card-header shadow text-left">
           <button
             type="button"

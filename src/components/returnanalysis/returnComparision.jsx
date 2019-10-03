@@ -8,17 +8,15 @@ HighchartsMore(Highcharts);
 class ReturnComparision extends Component {
   state = {
     options: {
-      title: {
-        text: "Solar Employment Growth by Sector, 2010-2016"
+      title: false,
+      subtitle: false,
+      xAxis: {
+        title: false,
+        type: "datetime"
       },
-
-      subtitle: {
-        text: "Source: thesolarfoundation.com"
-      },
-
       yAxis: {
         title: {
-          text: "Number of Employees"
+          text: "Return (%)"
         }
       },
       legend: {
@@ -31,8 +29,7 @@ class ReturnComparision extends Component {
         series: {
           label: {
             connectorAllowed: false
-          },
-          pointStart: 2010
+          }
         }
       },
 
@@ -76,21 +73,23 @@ class ReturnComparision extends Component {
   }
 
   mapDataToSeries = data => {
-    console.log(data);
-    if (
-      !data ||
-      data.length < 1 ||
-      data[0].instrumentDetails.instrumentId !== 474
-    ) {
-      return [];
-    }
-    return [
-      {
-        name: "Installation",
-        color: "#BBB",
-        data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-      }
-    ];
+    if (!data || data.length < 1) return [];
+
+    const series = data.map(item => {
+      return {
+        name: item.instrumentDetails.instrumentName,
+        color: item.color,
+        instrumentId: item.instrumentDetails.instrumentId,
+        data: item.instrumentReturns.map(element => {
+          return {
+            x: Date.parse(element.priceDate),
+            y: element.percentageChange,
+            price: element.instrumentPrice
+          };
+        })
+      };
+    });
+    return series;
   };
 
   render() {

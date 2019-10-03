@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
+import _ from "lodash";
+
 import SearchBar from "./searchBar";
 import {
   fetchAllInstruments,
@@ -15,7 +17,20 @@ import ReturnComparision from "./returnComparision";
 class ReturnAnalytics extends Component {
   state = {
     instruments: [],
-    selectedInstruments: []
+    selectedInstruments: [],
+    colors: [
+      "#2f7ed8",
+      "#0d233a",
+      "#8bbc21",
+      "#910000",
+      "#1aadce",
+      "#492970",
+      "#f28f43",
+      "#77a1e5",
+      "#c42525",
+      "#a6c96a"
+    ],
+    selectedColors: []
   };
 
   async componentDidMount() {
@@ -36,17 +51,29 @@ class ReturnAnalytics extends Component {
       return;
     }
 
-    const instrumentReturns = await fetchInstrumentReturns(
-      selectedInstrumentId
-    );
-    selectedInstruments.push(instrumentReturns);
+    const instrumentData = await fetchInstrumentReturns(selectedInstrumentId);
+    if (!instrumentData) {
+      toast("Data unavailable for this fund");
+      return;
+    }
 
-    this.setState({ selectedInstruments });
+    instrumentData.instrumentReturns = _.sortBy(
+      instrumentData.instrumentReturns,
+      "priceDate"
+    );
+
+    let { selectedColors, colors } = this.state;
+    const nextColor = colors.pop();
+    selectedColors.push(nextColor);
+
+    instrumentData.color = nextColor;
+    selectedInstruments.push(instrumentData);
+
+    this.setState({ selectedInstruments, selectedColors, colors });
   };
 
   fetchInstrumentReturns = async id => {
-    // const instrumentReturns = await fetchInstrumentReturns(id);
-    const instrumentReturns = await fetchInstrumentReturns(474);
+    const instrumentReturns = await fetchInstrumentReturns(id);
     return instrumentReturns;
   };
 
@@ -58,7 +85,12 @@ class ReturnAnalytics extends Component {
       return item.instrumentDetails.instrumentId.toString() !== instrumentId;
     });
 
-    this.setState({ selectedInstruments });
+    let { colors, selectedColors } = this.state;
+    const currentColor = selectedInstruments.color;
+    selectedColors = _.without(selectedColors, currentColor);
+    colors.push(currentColor);
+
+    this.setState({ selectedInstruments, colors, selectedColors });
   };
 
   isInstrumentExists = (items, itemId) => {
@@ -113,6 +145,7 @@ class ReturnAnalytics extends Component {
                   key={instrument.instrumentDetails.instrumentId}
                   data={instrument.instrumentDetails}
                   onClose={this.handleRemove}
+                  color={instrument.color}
                 ></FlashCard>
               </div>
             );
