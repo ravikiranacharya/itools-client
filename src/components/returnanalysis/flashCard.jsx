@@ -8,6 +8,11 @@ class FlashCard extends Component {
     this.setState({ data, color });
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { data, color } = nextProps;
+    this.setState({ data, color });
+  }
+
   render() {
     if (!this.state.data) return <h6>No data found</h6>;
     const { data, color } = this.state;

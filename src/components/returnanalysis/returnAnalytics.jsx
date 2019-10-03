@@ -19,9 +19,9 @@ class ReturnAnalytics extends Component {
     instruments: [],
     selectedInstruments: [],
     colors: [
+      "#1aadce",
       "#8bbc21",
       "#910000",
-      "#1aadce",
       "#2f7ed8",
       "#0d233a",
       "#492970",
@@ -63,9 +63,9 @@ class ReturnAnalytics extends Component {
     );
 
     let { selectedColors, colors } = this.state;
-    const nextColor = colors.pop();
+    const nextColor = colors[0];
+    colors = _.without(colors, nextColor);
     selectedColors.push(nextColor);
-
     instrumentData.color = nextColor;
     selectedInstruments.push(instrumentData);
 
@@ -110,6 +110,7 @@ class ReturnAnalytics extends Component {
   render() {
     if (!this.state.instruments) return <Spinner></Spinner>;
     const { instruments, selectedInstruments } = this.state;
+
     return (
       <div>
         <div className="row">
