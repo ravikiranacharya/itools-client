@@ -269,4 +269,8 @@ ul.navbar-nav li.active a {
   .amc-holding-chart {
     min-width: 100px !important;
   }
+
+  .add-schemes-btn {
+    margin-left: 0rem;
+  }
 }

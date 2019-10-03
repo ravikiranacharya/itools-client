@@ -79,10 +79,25 @@ class ScatterChart extends Component {
         "#8085e9",
         "#f15c80",
         "#f45b5b",
-        "#000000",
         "#FFFFFF",
+        "#000000",
         "#e4d354"
       ],
+      responsive: {
+        rules: [
+          {
+            condition: {
+              maxWidth: 700
+            },
+            chartOptions: {
+              legend: {
+                align: "left",
+                verticalAlign: "top"
+              }
+            }
+          }
+        ]
+      },
       series: []
     }
   };
@@ -140,7 +155,7 @@ class ScatterChart extends Component {
             ? maxRadius
             : (element.schemeAUM / maxAUM) * maxRadius * 100, // Radius
           fillColor: isManaged
-            ? element.color
+            ? { ...this.getGradientColor("#000000") } //element.color
             : { ...this.getGradientColor(element.color) }
         },
         schemeId: element.schemeId,
