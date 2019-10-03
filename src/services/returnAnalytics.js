@@ -267,6 +267,60 @@ function allInstrumentReturns() {
           percentageChange: 0.144346271
         }
       ]
+    },
+    {
+      instrumentDetails: {
+        instrumentId: 499,
+        instrumentName: "Axis Midcap Fund(G)",
+        categoryId: 26,
+        categoryName: "Mid Cap",
+        return: 4.5,
+        fromDate: "21-Jan-2018",
+        toDate: "21-Jan-2019"
+      },
+      instrumentReturns: [
+        {
+          priceDate: "2019-09-03T00:00:00",
+          instrumentPrice: 20.0769,
+          percentageChange: 0.267187391
+        }
+      ]
+    },
+    {
+      instrumentDetails: {
+        instrumentId: 499,
+        instrumentName: "Axis Midcap Fund(G)",
+        categoryId: 26,
+        categoryName: "Mid Cap",
+        return: 4.5,
+        fromDate: "21-Jan-2018",
+        toDate: "21-Jan-2019"
+      },
+      instrumentReturns: [
+        {
+          priceDate: "2019-09-03T00:00:00",
+          instrumentPrice: 20.0769,
+          percentageChange: 0.267187391
+        }
+      ]
+    },
+    {
+      instrumentDetails: {
+        instrumentId: 499,
+        instrumentName: "Axis Dynamic Bond Fund(G)",
+        categoryId: 26,
+        categoryName: "Mid Cap",
+        return: 4.5,
+        fromDate: "21-Jan-2018",
+        toDate: "21-Jan-2019"
+      },
+      instrumentReturns: [
+        {
+          priceDate: "2019-09-03T00:00:00",
+          instrumentPrice: 20.0769,
+          percentageChange: 0.267187391
+        }
+      ]
     }
   ];
 }
