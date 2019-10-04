@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import EasyTooltip from "./../common/easyTooltip";
 
 class AMCHolding extends Component {
   state = {
@@ -106,7 +107,7 @@ class AMCHolding extends Component {
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <i className="fa fa-bank fa-sm fa-fw text-gray-400" />
+              <EasyTooltip title="This is a sample description"></EasyTooltip>
             </a>
           </div>
         </div>
