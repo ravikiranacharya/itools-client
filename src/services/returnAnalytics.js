@@ -281,44 +281,103 @@ function allInstrumentReturns() {
       instrumentReturns: [
         {
           priceDate: "2019-09-03T00:00:00",
-          instrumentPrice: 20.0769,
-          percentageChange: 0.267187391
-        }
-      ]
-    },
-    {
-      instrumentDetails: {
-        instrumentId: 499,
-        instrumentName: "Axis Midcap Fund(G)",
-        categoryId: 26,
-        categoryName: "Mid Cap",
-        return: 4.5,
-        fromDate: "21-Jan-2018",
-        toDate: "21-Jan-2019"
-      },
-      instrumentReturns: [
+          instrumentPrice: 100.3845,
+          percentageChange: -0.346667065
+        },
         {
-          priceDate: "2019-09-03T00:00:00",
-          instrumentPrice: 20.0769,
-          percentageChange: 0.267187391
-        }
-      ]
-    },
-    {
-      instrumentDetails: {
-        instrumentId: 499,
-        instrumentName: "Axis Dynamic Bond Fund(G)",
-        categoryId: 26,
-        categoryName: "Mid Cap",
-        return: 4.5,
-        fromDate: "21-Jan-2018",
-        toDate: "21-Jan-2019"
-      },
-      instrumentReturns: [
+          priceDate: "2019-09-25T00:00:00",
+          instrumentPrice: 100.0365,
+          percentageChange: -0.346667065
+        },
         {
-          priceDate: "2019-09-03T00:00:00",
-          instrumentPrice: 20.0769,
-          percentageChange: 0.267187391
+          priceDate: "2019-09-24T00:00:00",
+          instrumentPrice: 99.967,
+          percentageChange: -0.069474642
+        },
+        {
+          priceDate: "2019-09-23T00:00:00",
+          instrumentPrice: 100.0185,
+          percentageChange: 0.051517001
+        },
+        {
+          priceDate: "2019-09-20T00:00:00",
+          instrumentPrice: 99.9525,
+          percentageChange: -0.065987792
+        },
+        {
+          priceDate: "2019-09-19T00:00:00",
+          instrumentPrice: 100.466,
+          percentageChange: 0.513744028
+        },
+        {
+          priceDate: "2019-09-18T00:00:00",
+          instrumentPrice: 100.467,
+          percentageChange: 0.000995362
+        },
+        {
+          priceDate: "2019-09-17T00:00:00",
+          instrumentPrice: 100.006,
+          percentageChange: -0.458857137
+        },
+        {
+          priceDate: "2019-09-16T00:00:00",
+          instrumentPrice: 100.109,
+          percentageChange: 0.10299382
+        },
+        {
+          priceDate: "2019-09-13T00:00:00",
+          instrumentPrice: 100.2865,
+          percentageChange: 0.177306736
+        },
+        {
+          priceDate: "2019-09-12T00:00:00",
+          instrumentPrice: 100.2015,
+          percentageChange: -0.084757171
+        },
+        {
+          priceDate: "2019-09-11T00:00:00",
+          instrumentPrice: 100.2735,
+          percentageChange: 0.071855212
+        },
+        {
+          priceDate: "2019-09-09T00:00:00",
+          instrumentPrice: 100.568,
+          percentageChange: 0.293696739
+        },
+        {
+          priceDate: "2019-09-06T00:00:00",
+          instrumentPrice: 100.355,
+          percentageChange: -0.211796993
+        },
+        {
+          priceDate: "2019-09-05T00:00:00",
+          instrumentPrice: 100.365,
+          percentageChange: 0.009964626
+        },
+        {
+          priceDate: "2019-09-04T00:00:00",
+          instrumentPrice: 100.4255,
+          percentageChange: 0.060279978
+        },
+        {
+          priceDate: "2019-08-30T00:00:00",
+          instrumentPrice: 100.117,
+          percentageChange: -0.307192894
+        },
+        {
+          priceDate: "2019-09-26T00:00:00",
+          instrumentPrice: 100.119,
+          percentageChange: 0.001997663
+        },
+        {
+          priceDate: "2019-09-27T00:00:00",
+          instrumentPrice: 100.1065,
+          percentageChange: -0.012485143
+        },
+        {
+          priceDate: "2019-09-30T00:00:00",
+          instrumentPrice: 100.251,
+          percentageChange: 0.144346271
         }
       ]
     }

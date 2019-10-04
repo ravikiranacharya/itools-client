@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import EasyTooltip from "../common/easyTooltip";
 
 class FundManagerPerformanceOverTime extends Component {
   state = {};
@@ -68,17 +69,7 @@ class FundManagerPerformanceOverTime extends Component {
             Fund Manager Performance Over Time
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i className="fa fa-list fa-sm fa-fw text-gray-400" />
-            </a>
+            <EasyTooltip title={`Current fund manager's returns over time.`} />
           </div>
         </div>
         <div className="card-body">

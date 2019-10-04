@@ -53,7 +53,9 @@ class ReturnAnalytics extends Component {
 
     const instrumentData = await fetchInstrumentReturns(selectedInstrumentId);
     if (!instrumentData) {
-      toast("Data unavailable for this fund");
+      toast(
+        "Data unavailable for this fund. Currently available for first 3 funds only."
+      );
       return;
     }
 

@@ -3,6 +3,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import HighchartsMore from "highcharts/highcharts-more.src";
 
+import EasyTooltip from "./../common/easyTooltip";
+
 HighchartsMore(Highcharts);
 
 class ReturnComparision extends Component {
@@ -10,6 +12,7 @@ class ReturnComparision extends Component {
     options: {
       title: false,
       subtitle: false,
+      credits: false,
       xAxis: {
         title: false,
         type: "datetime"
@@ -104,17 +107,7 @@ class ReturnComparision extends Component {
             Return Comparision
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i className="fa fa-list fa-sm fa-fw text-gray-400" />
-            </a>
+            <EasyTooltip title={`Daily returns of selected fund(s)`} />
           </div>
         </div>
         <div className="card-body">

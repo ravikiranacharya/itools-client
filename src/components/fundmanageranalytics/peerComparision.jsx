@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ScatterChart from "./scatterChart";
+import EasyTooltip from "../common/easyTooltip";
 
 class PeerComparision extends Component {
   state = {};
@@ -20,17 +21,10 @@ class PeerComparision extends Component {
             Schemes Managed vs. Universe
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i className="fa fa-list fa-sm fa-fw text-gray-400" />
-            </a>
+            <EasyTooltip
+              title={`Risk Return comparision for current fund manager's schemes against all the schemes. 
+              Hide/select schemes by clicking on the asset type.`}
+            />
           </div>
         </div>
         <div className="card-body">

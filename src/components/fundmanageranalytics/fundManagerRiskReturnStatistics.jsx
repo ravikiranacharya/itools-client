@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import HighchartsMore from "highcharts/highcharts-more.src";
+import EasyTooltip from "../common/easyTooltip";
 
 HighchartsMore(Highcharts);
 
@@ -97,17 +98,9 @@ class FundManagerRiskReturnStatistics extends Component {
             Risk Return Statistics
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i className="fa fa-list fa-sm fa-fw text-gray-400" />
-            </a>
+            <EasyTooltip
+              title={`Risk Return matrix for all the schemes that are managed by the current fund manager. Size of the bubble indicates the AUM of each fund with respect to other schemes.`}
+            />
           </div>
         </div>
         <div className="card-body">
