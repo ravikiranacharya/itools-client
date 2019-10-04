@@ -99,7 +99,7 @@ class AMCHolding extends Component {
           </h6>
           <div className="dropdown no-arrow">
             <EasyTooltip
-              title={`Click on the slice to filter the schemes list according to AMC.
+              title={`Click on the slices to filter the schemes list according to AMC.
                       Click on the slice again to remove filter.`}
             />
           </div>

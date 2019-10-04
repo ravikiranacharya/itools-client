@@ -52,7 +52,7 @@ class SectorAnalytics extends Component {
           sectors={sectors}
         />
         <div className="row p-2">
-          <MTMAllocation data={amcHoldingData} />
+          <MTMAllocation data={amcHoldingData} level="sector" />
         </div>
       </div>
     );

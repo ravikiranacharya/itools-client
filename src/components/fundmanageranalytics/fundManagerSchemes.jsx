@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import ReactTooltip from "react-tooltip";
+import EasyTooltip from "./../common/easyTooltip";
 
 class FundManagerSchemes extends Component {
   state = {};
@@ -36,16 +37,10 @@ class FundManagerSchemes extends Component {
             {this.props.title}
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle pointer"
-              role="button"
-              id="fund-manager-schemes-tooltip"
-              data-tip="This table displays the schemes managed by selected fund manager, the category to which the scheme belongs and the total MTM of the scheme."
-            >
-              <i className="fa fa-list fa-sm fa-fw text-gray-400">
-                <ReactTooltip place="bottom" type="dark" effect="float" />
-              </i>
-            </a>
+            <EasyTooltip
+              title={`This is the list of schemes managed by fund manager.
+                      Click on any scheme to see the factsheet for that fund.`}
+            ></EasyTooltip>
           </div>
         </div>
         <div className="card-body">

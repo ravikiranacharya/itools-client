@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import "react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
+import EasyTooltip from "./easyTooltip";
 
 class SchemeHolding extends Component {
   state = {};
@@ -57,17 +58,10 @@ class SchemeHolding extends Component {
             {this.props.title}
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i className="fa fa-list fa-sm fa-fw text-gray-400" />
-            </a>
+            <EasyTooltip
+              title={`This is the list of schemes held by selected AMCs.
+                      Sort and search by your criteria.`}
+            ></EasyTooltip>
           </div>
         </div>
         <div className="card-body">

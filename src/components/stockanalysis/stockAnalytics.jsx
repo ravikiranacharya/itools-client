@@ -65,7 +65,7 @@ class StockAnalytics extends Component {
           instruments={instruments}
         />
         <div className="row p-2">
-          <MTMAllocation data={amcHoldingData} />
+          <MTMAllocation data={amcHoldingData} level="security" />
         </div>
       </div>
     );

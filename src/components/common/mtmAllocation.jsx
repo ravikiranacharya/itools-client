@@ -8,8 +8,12 @@ class MTMAllocation extends Component {
   };
 
   componentWillMount() {
-    const { data: amcHoldingData } = this.props;
-    this.setState({ amcHoldingData, originalSchemes: amcHoldingData.Schemes });
+    const { data: amcHoldingData, level } = this.props;
+    this.setState({
+      amcHoldingData,
+      originalSchemes: amcHoldingData.Schemes,
+      level
+    });
   }
 
   filterSchemes = amcId => {
@@ -31,19 +35,19 @@ class MTMAllocation extends Component {
 
   render() {
     if (!this.state.amcHoldingData) return <h6>No data found</h6>;
-    const { amcHoldingData } = this.state;
+    const { amcHoldingData, level } = this.state;
     return (
       <React.Fragment>
         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <AMCHolding
-            title="AMCs holding the security"
+            title={`AMCs holding the ${level}`}
             data={amcHoldingData.AMCs}
             onFiltered={this.filterSchemes}
           />
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
           <SchemeHolding
-            title="Schemes holding the security"
+            title={`Schemes holding in the ${level}`}
             data={amcHoldingData.Schemes}
           />
         </div>
