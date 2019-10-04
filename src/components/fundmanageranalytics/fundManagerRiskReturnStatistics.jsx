@@ -52,12 +52,22 @@ class FundManagerRiskReturnStatistics extends Component {
       credits: false,
       xAxis: {
         gridLineWidth: 0,
-        visible: false
+        title: {
+          text: "Risk"
+        },
+        lineColor: "transparent",
+        gridLineColor: "transparent",
+        tickColor: "transparent",
+        labels: false
       },
       yAxis: {
-        visible: false,
-        startOnTick: false,
-        endOnTick: false
+        title: {
+          text: "Return"
+        },
+        gridLineWidth: 0,
+        labels: false,
+        lineColor: "transparent",
+        gridLineColor: "transparent"
       },
       tooltip: {
         formatter: function() {
