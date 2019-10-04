@@ -35,7 +35,8 @@ class FundManagerPerformanceOverTime extends Component {
           formatter: function() {
             return this.value + "%";
           }
-        }
+        },
+        gridLineWidth: 0
       },
 
       tooltip: {
