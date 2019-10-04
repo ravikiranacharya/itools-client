@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import { Tooltip } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import InfoIcon from "@material-ui/core/Icon";
+
+import Tooltip from "@material-ui/core/Tooltip";
+import Icon from "@material-ui/core/Icon";
 
 class EasyTooltip extends Component {
   state = {};
 
   render() {
     return (
-      <Tooltip {...this.props}>
-        <InfoIcon></InfoIcon>
-      </Tooltip>
+      <div>
+        <Tooltip placement="left-start" {...this.props}>
+          <i className="fa fa-info fa-sm fa-fw text-gray-400" />
+        </Tooltip>
+      </div>
     );
   }
 }

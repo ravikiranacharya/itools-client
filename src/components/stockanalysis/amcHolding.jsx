@@ -98,17 +98,10 @@ class AMCHolding extends Component {
             {this.props.title}
           </h6>
           <div className="dropdown no-arrow">
-            <a
-              className="dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <EasyTooltip title="This is a sample description"></EasyTooltip>
-            </a>
+            <EasyTooltip
+              title={`Click on the slice to filter the schemes list according to AMC.
+                      Click on the slice again to remove filter.`}
+            />
           </div>
         </div>
         <div className="card-body">
