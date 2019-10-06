@@ -48,7 +48,7 @@ class SectorOverview extends Component {
           <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="success"
-              icon="fa-signal"
+              icon="fa-briefcase"
               title={
                 <React.Fragment>
                   <div>Amount invested</div>
@@ -78,7 +78,7 @@ class SectorOverview extends Component {
           <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="warning"
-              icon="fa-road"
+              icon="fa-signal"
               title={
                 <React.Fragment>
                   <div>Max. weightage allocated</div>
