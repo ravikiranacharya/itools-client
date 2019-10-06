@@ -10,6 +10,7 @@ import ReturnAnalytics from "./components/returnanalysis/returnAnalytics";
 import NotFound from "./components/notFound";
 
 import "./App.css";
+import AMCAnalytics from "./components/amcanalytics/amcAnalytics";
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
               component={FundManagerAnalytics}
             />
             <Route path="/return-analytics" component={ReturnAnalytics} />
+            <Route path="/amc-analytics" component={AMCAnalytics} />
             <Route path="/not-found" component={NotFound} />
             <Redirect from="/" exact to="/stock-analytics" />
             <Redirect to="/not-found" />

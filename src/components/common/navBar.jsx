@@ -76,6 +76,16 @@ class NavBar extends Component {
               <NavLink
                 activeClassName="active"
                 className="nav-item nav-link"
+                to="/amc-analytics"
+                onClick={this.toggleMenu}
+              >
+                AMC Analytics
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClassName="active"
+                className="nav-item nav-link"
                 to="/fund-picker"
                 onClick={this.toggleMenu}
               >

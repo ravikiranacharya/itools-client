@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Tooltip from "@material-ui/core/Tooltip";
-import Icon from "@material-ui/core/Icon";
 
 class EasyTooltip extends Component {
   state = {};
