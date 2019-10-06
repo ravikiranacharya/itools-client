@@ -45,7 +45,7 @@ class FundManagerOverview extends Component {
           <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="info"
-              icon="fa-download"
+              icon="fa-line-chart"
               title="Return in 1 year"
               value={return1y + "%"}
             />
@@ -53,7 +53,7 @@ class FundManagerOverview extends Component {
           <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
             <Box
               highlight="warning"
-              icon="fa-road"
+              icon="fa-flask"
               title="Volatility"
               value={volatility + "%"}
             />
