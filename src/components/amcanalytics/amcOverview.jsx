@@ -23,6 +23,7 @@ class AMCOverview extends Component {
 
     let return1y = _.find(data.returns, r => r.returnInterval === 12);
     let return3y = _.find(data.returns, r => r.returnInterval === 36);
+
     return (
       <div className="row p-2">
         <div className="col-md-6 col-lg-3 col-sm-6 col-12 pb-sm-2 py-2">
