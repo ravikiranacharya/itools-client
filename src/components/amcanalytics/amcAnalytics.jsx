@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import AMCOverview from "./amcOverview";
-import { fetchAMCUniversalOverview } from "../../services/amcAnalytics";
+import {
+  fetchAMCUniversalOverview,
+  fetchAssetWiseAMCPerformance
+} from "../../services/amcAnalytics";
 
 class AMCAnalytics extends Component {
   state = {};
 
   async componentDidMount() {
     const amcOverview = await fetchAMCUniversalOverview();
-    this.setState({ amcOverview });
+    const assetWisePerformance = await fetchAssetWiseAMCPerformance(null);
+    this.setState({ amcOverview, assetWisePerformance });
   }
+
   render() {
     const { amcOverview } = this.state;
     return <AMCOverview data={amcOverview}></AMCOverview>;
