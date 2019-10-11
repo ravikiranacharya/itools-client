@@ -206,7 +206,8 @@ ul.navbar-nav li.active a {
   padding-bottom: 0px;
 }
 
-.flash-card .returns-date {
+.flash-card .returns-date,
+.card-labels {
   font-size: 0.5rem;
 }
 
@@ -229,6 +230,11 @@ ul.navbar-nav li.active a {
 .chart-area {
   height: auto;
   min-height: 350px;
+}
+
+.amc-full-name {
+  color: #bbb;
+  font-weight: 100;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

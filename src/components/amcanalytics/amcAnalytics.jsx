@@ -4,6 +4,8 @@ import {
   fetchAMCUniversalOverview,
   fetchAssetWiseAMCPerformance
 } from "../../services/amcAnalytics";
+import AMCCard from "./amcCard";
+import Spinner from "../common/spinner";
 
 class AMCAnalytics extends Component {
   state = {};
@@ -15,8 +17,21 @@ class AMCAnalytics extends Component {
   }
 
   render() {
-    const { amcOverview } = this.state;
-    return <AMCOverview data={amcOverview}></AMCOverview>;
+    if (!(this.state.amcOverview && this.state.assetWisePerformance))
+      return <Spinner></Spinner>;
+
+    const { amcOverview, assetWisePerformance } = this.state;
+    console.log(assetWisePerformance);
+    return (
+      <div>
+        <AMCOverview data={amcOverview}></AMCOverview>
+        <div className="row p-2">
+          {assetWisePerformance.map(item => {
+            return <AMCCard data={item} key={item.amcId}></AMCCard>;
+          })}
+        </div>
+      </div>
+    );
   }
 }
 
