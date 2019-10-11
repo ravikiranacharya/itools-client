@@ -34,9 +34,21 @@ class AMCCard extends Component {
                 <div className="card-label">2y Sharpe</div>
               </div>
             </div>
-            <div className="row card-labels">
-              <div className="col-md-6 col-lg-6 col-sm-6 col-6">AUM</div>
-              <div className="col-md-6 col-lg-6 col-sm-6 col-6">#Schemes</div>
+            <div className="row pt-2">
+              <div className="col-md-6 col-lg-6 col-sm-6 col-6">
+                <div className="col-6"></div>
+                <div className="col-6">
+                  <i className="fa text-info fa-money" />
+                  <div className="card-label">'000 Cr</div>
+                </div>
+              </div>
+              <div className="col-md-6 col-lg-6 col-sm-6 col-6">
+                <div className="col-6"></div>
+                <div className="col-6">
+                  <i className="fa text-info fa-list" />
+                  <div className="card-label">#Schemes</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
