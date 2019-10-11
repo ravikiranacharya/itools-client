@@ -61,28 +61,28 @@ class AMCCard extends Component {
             </div>
             <div className="row p-1">
               <div className="col-md-6 col-lg-6 col-sm-6 col-6">
-                <div className="row">
-                  <div className="col-md-6 col-lg-6 col-sm-6 col-6">
+                <div className="row pull-right">
+                  <div>
                     <i className="fa text-info fa-money" />
                     <div className="card-label">'000 Cr</div>
                   </div>
-                  <div className="col-md-6 col-lg-6 col-sm-6 col-6">
-                    <div>{`${
+                  <div>
+                    <p className="font-weight-bold">{`${
                       parseFloat(data.aum)
                         ? parseFloat(data.aum).toFixed(1)
                         : "-"
-                    }`}</div>
+                    }`}</p>
                   </div>
                 </div>
               </div>
               <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                 <div className="row">
-                  <div className="col-md-6 col-lg-6 col-sm-6 col-6">
+                  <div>
                     <i className="fa text-info fa-list" />
                     <div className="card-label">#Schemes</div>
                   </div>
-                  <div className="col-md-6 col-lg-6 col-sm-6 col-6">
-                    <div>{`${data.schemesCount}`}</div>
+                  <div>
+                    <p className="font-weight-bold">{`${data.schemesCount}`}</p>
                   </div>
                 </div>
               </div>
