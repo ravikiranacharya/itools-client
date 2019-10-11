@@ -26,63 +26,107 @@ class AMCCard extends Component {
           </div>
           <div className="card-body">
             <div className="row">
-              <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-                <div
-                  className={`card-value ${this.textColorClass(data.return1y)}`}
-                >{`${
-                  parseFloat(data.return1y)
-                    ? `${parseFloat(data.return1y).toFixed(2)}%`
-                    : "-"
-                }`}</div>
-                <div className="card-label">1y Return</div>
-              </div>
-              <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-                <div
-                  className={`card-value ${this.textColorClass(data.return3y)}`}
-                >{`${
-                  parseFloat(data.return3y)
-                    ? `${parseFloat(data.return3y).toFixed(2)}%`
-                    : "-"
-                }`}</div>
-                <div className="card-label">3y Return</div>
-              </div>
-              <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-                <div
-                  className={`card-value ${this.textColorClass(
-                    data.sharpeRatio
-                  )}`}
-                >{`${
-                  parseFloat(data.sharpeRatio)
-                    ? `${parseFloat(data.sharpeRatio).toFixed(2)}`
-                    : "-"
-                }`}</div>
-                <div className="card-label">2y Sharpe</div>
-              </div>
-            </div>
-            <div className="row p-1">
               <div className="col-md-6 col-lg-6 col-sm-6 col-6">
-                <div className="row pull-right">
-                  <div>
-                    <i className="fa text-info fa-money" />
-                    <div className="card-label">'000 Cr</div>
-                  </div>
-                  <div>
-                    <p className="font-weight-bold">{`${
+                <div className="row">
+                  <div className="pull-right">
+                    <span className="pull-left card-icon">
+                      <i className="fa text-info fa-money" />
+                      <div className="card-label">'000 Cr</div>
+                    </span>
+                    <span className="font-weight-bold">{`${
                       parseFloat(data.aum)
                         ? parseFloat(data.aum).toFixed(1)
                         : "-"
-                    }`}</p>
+                    }`}</span>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="pull-right">
+                    <span className="pull-left card-icon">
+                      <i className="fa text-info fa-list" />
+                      <div className="card-label">#Schemes</div>
+                    </span>
+                    <span className="font-weight-bold">{`${data.schemesCount}`}</span>
                   </div>
                 </div>
               </div>
               <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                 <div className="row">
-                  <div>
-                    <i className="fa text-info fa-list" />
-                    <div className="card-label">#Schemes</div>
+                  <div className="col-md-6 col-lg-6 col-sm-6 col-6">
+                    <div className="pb-1">
+                      <div
+                        className={`card-value ${this.textColorClass(
+                          data.return1y
+                        )}`}
+                      >{`${
+                        parseFloat(data.return1y)
+                          ? `${parseFloat(data.return1y).toFixed(2)}%`
+                          : "-"
+                      }`}</div>
+                      <div className="card-label">1y Return</div>
+                    </div>
+                    <div className="pb-1">
+                      <div
+                        className={`card-value ${this.textColorClass(
+                          data.return3y
+                        )}`}
+                      >{`${
+                        parseFloat(data.return3y)
+                          ? `${parseFloat(data.return3y).toFixed(2)}%`
+                          : "-"
+                      }`}</div>
+                      <div className="card-label">3y Return</div>
+                    </div>
+                    <div className="pb-1">
+                      <div
+                        className={`card-value ${this.textColorClass(
+                          data.sharpeRatio
+                        )}`}
+                      >{`${
+                        parseFloat(data.sharpeRatio)
+                          ? `${parseFloat(data.sharpeRatio).toFixed(2)}`
+                          : "-"
+                      }`}</div>
+                      <div className="card-label">2y Sharpe</div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-weight-bold">{`${data.schemesCount}`}</p>
+                  <div className="col-md-6 col-lg-6 col-sm-6 col-6">
+                    <div className="pb-1">
+                      <div
+                        className={`card-value ${this.textColorClass(
+                          data.return2y
+                        )}`}
+                      >{`${
+                        parseFloat(data.return2y)
+                          ? `${parseFloat(data.return2y).toFixed(2)}%`
+                          : "-"
+                      }`}</div>
+                      <div className="card-label">2y Return</div>
+                    </div>
+                    <div className="pb-1">
+                      <div
+                        className={`card-value ${this.textColorClass(
+                          data.return5y
+                        )}`}
+                      >{`${
+                        parseFloat(data.return5y)
+                          ? `${parseFloat(data.return5y).toFixed(2)}%`
+                          : "-"
+                      }`}</div>
+                      <div className="card-label">5y Return</div>
+                    </div>
+                    <div className="pb-1">
+                      <div
+                        className={`card-value ${this.textColorClass(
+                          data.return1m
+                        )}`}
+                      >{`${
+                        parseFloat(data.return1m)
+                          ? `${parseFloat(data.return1m).toFixed(2)}%`
+                          : "-"
+                      }`}</div>
+                      <div className="card-label">1m Return</div>
+                    </div>
                   </div>
                 </div>
               </div>
