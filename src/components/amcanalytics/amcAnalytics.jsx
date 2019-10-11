@@ -17,6 +17,12 @@ class AMCAnalytics extends Component {
     this.setState({ amcOverview, assetWisePerformance });
   }
 
+  handleSortChange = event => {
+    const value = event.target.value;
+    console.log(value);
+    this.setState({ value });
+  };
+
   render() {
     if (!(this.state.amcOverview && this.state.assetWisePerformance))
       return <Spinner></Spinner>;
@@ -31,7 +37,11 @@ class AMCAnalytics extends Component {
 
     return (
       <div>
-        <SortBar title="Sort" items={sortItems}></SortBar>
+        <SortBar
+          title="Prop"
+          items={sortItems}
+          handleChange={this.handleSortChange}
+        ></SortBar>
         <AMCOverview data={amcOverview}></AMCOverview>
         <div className="row p-2">
           {assetWisePerformance.map(item => {

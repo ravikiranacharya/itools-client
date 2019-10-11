@@ -16,7 +16,7 @@ class AMCCard extends Component {
   render() {
     if (!this.state.data) return <Spinner></Spinner>;
     const { data } = this.state;
-    console.log(data);
+
     return (
       <div className="col-md-3 col-lg-3 col-sm-6 col-12 pb-2">
         <div className="card shadow flash-card animated--fade-in">

@@ -58,13 +58,7 @@ class SortBar extends Component {
     }
   }));
 
-  handleChange = event => {
-    const value = event.target.value;
-    this.setState({ value });
-  };
-
   render() {
-    console.log(this.props);
     const { items, title, handleChange } = this.props;
 
     return (
