@@ -24,11 +24,11 @@ class AMCCard extends Component {
             <div className="row">{data.amcShortName}</div>
             <div className="row amc-full-name">{data.amcFullName}</div>
           </div>
-          <div className="card-body">
+          <div className="card-body pb-1">
             <div className="row">
               <div className="col-md-6 col-lg-6 col-sm-6 col-6">
                 <div className="row">
-                  <div className="pull-right">
+                  <div className="pull-right pl-3">
                     <span className="pull-left card-icon">
                       <i className="fa text-info fa-money" />
                       <div className="card-label">'000 Cr</div>
@@ -41,7 +41,7 @@ class AMCCard extends Component {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="pull-right">
+                  <div className="pull-right pl-3">
                     <span className="pull-left card-icon">
                       <i className="fa text-info fa-list" />
                       <div className="card-label">#Schemes</div>
