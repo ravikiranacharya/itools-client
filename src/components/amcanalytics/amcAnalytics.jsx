@@ -6,6 +6,7 @@ import {
 } from "../../services/amcAnalytics";
 import AMCCard from "./amcCard";
 import Spinner from "../common/spinner";
+import SortBar from "./sortBar";
 
 class AMCAnalytics extends Component {
   state = {};
@@ -21,9 +22,16 @@ class AMCAnalytics extends Component {
       return <Spinner></Spinner>;
 
     const { amcOverview, assetWisePerformance } = this.state;
-    console.log(assetWisePerformance);
+    const sortItems = [
+      { id: 1, label: "Name", value: "amcName" },
+      { id: 2, label: "1y Return", value: "return1y" },
+      { id: 3, label: "3y Return", value: "return3y" },
+      { id: 4, label: "Sharpe Ratio", value: "sharpeRatio" }
+    ];
+
     return (
       <div>
+        <SortBar title="Sort" items={sortItems}></SortBar>
         <AMCOverview data={amcOverview}></AMCOverview>
         <div className="row p-2">
           {assetWisePerformance.map(item => {
