@@ -20,10 +20,19 @@ class AMCCard extends Component {
             <div className="row amc-full-name">{data.amcFullName}</div>
           </div>
           <div className="card-body">
-            <div className="row card-labels">
-              <div className="col-md-4 col-lg-4 col-sm-4 col-4">1y Return</div>
-              <div className="col-md-4 col-lg-4 col-sm-4 col-4">3y Return</div>
-              <div className="col-md-4 col-lg-4 col-sm-4 col-4">2y Sharpe</div>
+            <div className="row">
+              <div className="col-md-4 col-lg-4 col-sm-4 col-4">
+                <div>6.54%</div>
+                <div className="card-label">1y Return</div>
+              </div>
+              <div className="col-md-4 col-lg-4 col-sm-4 col-4">
+                <div>6.54%</div>
+                <div className="card-label">3y Return</div>
+              </div>
+              <div className="col-md-4 col-lg-4 col-sm-4 col-4">
+                <div>6.54%</div>
+                <div className="card-label">2y Sharpe</div>
+              </div>
             </div>
             <div className="row card-labels">
               <div className="col-md-6 col-lg-6 col-sm-6 col-6">AUM</div>
