@@ -13,7 +13,7 @@ class AMCCard extends Component {
     if (!this.state.data) return <Spinner></Spinner>;
     const { data } = this.state;
     return (
-      <div className="col-md-3 col-lg-3 col-sm-6 col-12">
+      <div className="col-md-3 col-lg-3 col-sm-6 col-12 pb-2">
         <div className="card shadow flash-card animated--fade-in">
           <div className="card-header shadow text-left">
             <div className="row">{data.amcShortName}</div>
