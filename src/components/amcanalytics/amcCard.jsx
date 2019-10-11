@@ -9,6 +9,10 @@ class AMCCard extends Component {
     this.setState({ data });
   }
 
+  textColorClass = value => {
+    return parseFloat(value) > 0 ? "text-success" : "text-danger";
+  };
+
   render() {
     if (!this.state.data) return <Spinner></Spinner>;
     const { data } = this.state;
@@ -23,23 +27,35 @@ class AMCCard extends Component {
           <div className="card-body">
             <div className="row">
               <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-                <div className="card-value">{`${
-                  data.return1y
+                <div
+                  className={`card-value ${this.textColorClass(data.return1y)}`}
+                >{`${
+                  parseFloat(data.return1y)
                     ? `${parseFloat(data.return1y).toFixed(2)}%`
                     : "-"
                 }`}</div>
                 <div className="card-label">1y Return</div>
               </div>
               <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-                <div className="card-value">{`${
-                  data.return3y
+                <div
+                  className={`card-value ${this.textColorClass(data.return3y)}`}
+                >{`${
+                  parseFloat(data.return3y)
                     ? `${parseFloat(data.return3y).toFixed(2)}%`
                     : "-"
                 }`}</div>
                 <div className="card-label">3y Return</div>
               </div>
               <div className="col-md-4 col-lg-4 col-sm-4 col-4">
-                <div className="card-value">6.54%</div>
+                <div
+                  className={`card-value ${this.textColorClass(
+                    data.sharpeRatio
+                  )}`}
+                >{`${
+                  parseFloat(data.sharpeRatio)
+                    ? `${parseFloat(data.sharpeRatio).toFixed(2)}`
+                    : "-"
+                }`}</div>
                 <div className="card-label">2y Sharpe</div>
               </div>
             </div>
@@ -51,7 +67,11 @@ class AMCCard extends Component {
                     <div className="card-label">'000 Cr</div>
                   </div>
                   <div className="col-md-6 col-lg-6 col-sm-6 col-6">
-                    <div>1000</div>
+                    <div>{`${
+                      parseFloat(data.aum)
+                        ? parseFloat(data.aum).toFixed(1)
+                        : "-"
+                    }`}</div>
                   </div>
                 </div>
               </div>
@@ -62,7 +82,7 @@ class AMCCard extends Component {
                     <div className="card-label">#Schemes</div>
                   </div>
                   <div className="col-md-6 col-lg-6 col-sm-6 col-6">
-                    <div>53</div>
+                    <div>{`${data.schemesCount}`}</div>
                   </div>
                 </div>
               </div>
