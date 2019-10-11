@@ -237,6 +237,11 @@ ul.navbar-nav li.active a {
   font-weight: 100;
 }
 
+.card-value {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .box .text-xs {
     font-size: 0.6rem;
